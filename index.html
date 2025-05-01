@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranjan Yadav | Data Engineer</title>
+  <style>
+    :root {
+      /* Neon Glow Terminal Theme */
+      --bg-color: #1a1d24;       /* Deeper, darker background for contrast */
+      --text-color: #f0f2f8;     /* Much brighter white text for readability */
+      --accent-color: #00d8ff;   /* Bright cyan/blue with neon glow feel */
+      --secondary-accent: #7bff00; /* Electric lime green for vivid contrast */
+      --border-color: #4d5bce;   /* Luminous purple-blue border */
+      --hover-color: #ffffff;    /* Pure white for hover state */
+      --prompt-color: #ff47a1;   /* Hot pink prompt for contrast */
+      --title-color: #ffcc00;    /* Vibrant gold for titles */
+    } 
+
+    body {
+      font-family: 'Courier New', monospace; /* Classic terminal font */
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 20px;
+      max-width: 1000px; /* Limit content width */
+      margin: 0 auto; /* Center content */
+      line-height: 1.6;
+    }
+
+    .container {
+      padding: 0 15px;
+    }
+
+    /* Navigation bar styling */
+    .nav {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border-color); /* Softer border */
+      padding-bottom: 15px;
+    }
+
+    .nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: var(--text-color); /* Off-white text */
+      padding: 6px 12px;
+      border-radius: 0;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    .nav a:hover {
+        color: var(--hover-color); /* Lighter grey hover */
+        background-color: transparent;
+    }
+
+    /* Style for the active navigation link */
+    .nav a.active {
+      color: var(--accent-color); /* Blue/cyan active link */
+      font-weight: bold;
+      background-color: transparent;
+    }
+    .nav a.active:hover {
+        color: var(--hover-color); /* Keep hover effect */
+    }
+
+
+    /* Terminal prompt style */
+    .prompt {
+      color: var(--prompt-color); /* Blue/cyan prompt */
+      margin-right: 5px; /* Slightly less margin */
+      font-weight: bold;
+    }
+    .prompt-user { /* Different color for user/host part */
+        color: var(--secondary-accent); /* Green */
+    }
+
+    /* General section styling */
+    .section {
+      margin-bottom: 40px;
+      display: none;
+    }
+    .section.active {
+      display: block;
+    }
+
+    /* Section title styling */
+    .section-title {
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      color: var(--title-color); /* Yellow for main section titles */
+      font-size: 1.3em; /* Slightly larger */
+      display: flex;
+      align-items: center;
+      cursor: default;
+      font-weight: bold;
+    }
+    /* Sub-section title styling (like in expertise) */
+    .sub-section-title {
+        color: var(--accent-color); /* Blue/cyan for sub-titles */
+        font-size: 1.1em;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        font-weight: normal;
+    }
+
+
+    /* Box container for content within sections */
+    .content-box {
+        background-color: transparent;
+        border: 1px solid var(--border-color); /* Softer border */
+        border-radius: 0;
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+
+    /* Profile section layout */
+    .profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      background-color: transparent;
+      border: 1px solid var(--border-color); /* Softer border */
+      border-radius: 0;
+      padding: 25px;
+    }
+
+    /* Profile image placeholder */
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 0;
+      margin-right: 30px;
+      margin-bottom: 15px;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-color); /* Blue/cyan initials */
+      font-size: 24px;
+      font-weight: bold;
+      flex-shrink: 0;
+      border: 2px solid var(--border-color); /* Softer border */
+      box-shadow: none;
+    }
+
+    .profile-info p {
+        margin: 6px 0; /* Slightly more spacing */
+        color: var(--text-color);
+        font-size: 0.95em; /* Slightly smaller */
+    }
+     /* Data Engineer theme representation */
+    .profile-info .data-item::before {
+        content: "[";
+        color: var(--secondary-accent); /* Green brackets */
+        margin-right: 4px;
+    }
+     .profile-info .data-item::after {
+        content: "]";
+        color: var(--secondary-accent); /* Green brackets */
+        margin-left: 4px;
+    }
+    .profile-info .data-item .item-name {
+        color: var(--accent-color); /* Blue/cyan item name */
+        margin: 0 5px; /* Space around item name */
+    }
+
+    .profile-info h2 { /* Style the main heading */
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: var(--title-color); /* Yellow heading */
+    }
+
+    /* Accent color for specific text */
+    .accent {
+      color: var(--accent-color); /* Blue/cyan accent */
+      font-weight: bold;
+    }
+
+    /* Skills section layout */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Individual skill tag styling */
+    .skill-tag {
+      background-color: rgba(152, 195, 121, 0.1); /* Faint green background */
+      color: var(--secondary-accent); /* Green text */
+      padding: 5px 10px; /* Slightly smaller padding */
+      border-radius: 3px; /* Slightly rounded corners */
+      font-size: 0.85em;
+      border: 1px solid rgba(152, 195, 121, 0.3); /* Faint green border */
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .skill-tag:hover {
+        background-color: rgba(152, 195, 121, 0.2); /* Slightly stronger green bg */
+        color: var(--hover-color);
+        border-color: var(--secondary-accent);
+    }
+
+    /* Container for project/research cards */
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    /* Individual card styling (projects/contributions) */
+    .card {
+      background-color: transparent;
+      border: 1px solid var(--border-color); /* Softer border */
+      border-radius: 0;
+      padding: 20px;
+      position: relative;
+      transition: border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 180px;
+      box-shadow: none;
+    }
+
+    .card:hover {
+      border-color: var(--accent-color); /* Blue/cyan border on hover */
+    }
+
+    /* Card title styling */
+    .card-title {
+      color: var(--accent-color); /* Blue/cyan title */
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.1em;
+    }
+
+    /* Card description styling */
+    .card-desc {
+      margin-bottom: 15px;
+      color: var(--text-color); /* Off-white text */
+      flex-grow: 1;
+      font-size: 0.9em; /* Slightly smaller desc */
+    }
+
+    /* Container for project tags */
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    /* Individual project tag styling */
+    .project-tag {
+      background-color: rgba(97, 175, 239, 0.1); /* Faint blue background */
+      color: var(--accent-color); /* Blue text */
+      border: 1px solid rgba(97, 175, 239, 0.3); /* Faint blue border */
+      padding: 4px 10px;
+      border-radius: 3px; /* Slightly rounded */
+      font-size: 0.8em;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .project-tag:hover {
+        background-color: rgba(97, 175, 239, 0.2);
+        color: var(--hover-color);
+        border-color: var(--accent-color);
+    }
+
+    /* Link icon styling */
+    .link-icon {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: var(--text-color);
+      opacity: 0.6; /* Less obvious */
+      transition: color 0.3s ease, opacity 0.3s ease;
+      font-size: 0.9em; /* Smaller link text */
+      text-decoration: none;
+    }
+    .card:hover .link-icon {
+        color: var(--accent-color); /* Blue/cyan hover */
+        opacity: 1;
+    }
+
+    /* Typing animation for the main heading */
+    .typing-animation {
+      display: inline-block;
+      overflow: hidden;
+      border-right: 3px solid var(--accent-color); /* Blue/cyan blinking cursor */
+      white-space: nowrap;
+      margin: 0;
+      letter-spacing: 0.1em;
+      animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+      color: var(--title-color); /* Yellow text */
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .typing-animation .accent {
+        color: var(--accent-color); /* Blue/cyan accent within */
+        font-weight: bold; /* Ensure accent is bold */
+    }
+
+
+    /* Keyframes for typing animation */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    /* Keyframes for blinking cursor */
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: var(--accent-color) } /* Blue/cyan cursor */
+    }
+
+    /* Terminal line effect (used in 'about' section) */
+    .terminal-line {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 8px; /* Tighter lines */
+      opacity: 0;
+      animation: fadeInLine 0.5s forwards;
+      color: var(--text-color);
+      font-size: 0.95em;
+    }
+
+    .terminal-line::before {
+      content: " > "; /* Prompt for about lines */
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--secondary-accent); /* Green prompt */
+      font-weight: bold;
+    }
+
+    /* Keyframes for terminal line fade-in */
+    @keyframes fadeInLine {
+      to { opacity: 1; }
+    }
+
+    /* Page transition effect */
+    .fade-in {
+      animation: fadeIn 0.4s ease-in; /* Faster fade */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Footer styling */
+    .footer {
+        text-align: center;
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-color); /* Softer border */
+        font-size: 0.9em;
+        color: var(--text-color);
+        opacity: 0.7; /* Slightly faded */
+    }
+    .footer .accent {
+        color: var(--secondary-accent); /* Green accent in footer */
+    }
+
+    /* Boot sequence styling */
+    .boot-sequence {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-color); /* Dark grey background */
+        color: var(--text-color); /* Off-white text */
+        padding: 20px;
+        box-sizing: border-box;
+        z-index: 9999;
+        font-family: 'Courier New', monospace;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 10%;
+        opacity: 1;
+        transition: opacity 0.5s ease-out 0.5s;
+    }
+    .boot-sequence div {
+        margin-bottom: 10px;
+        opacity: 0;
+        animation: fadeInLine 0.4s forwards;
+    }
+    .boot-sequence .ok {
+        color: var(--secondary-accent); /* Green for [OK] */
+        margin-left: 10px;
+    }
+     .boot-sequence .welcome {
+        color: var(--title-color); /* Yellow for welcome */
+        font-weight: bold;
+    }
+
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .cards-container {
+            grid-template-columns: 1fr;
+        }
+        .profile {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .profile-img {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+        .typing-animation {
+            font-size: 1.3em;
+            white-space: normal;
+            border-right: none;
+            animation: none;
+            width: auto;
+            text-align: center;
+            display: block;
+        }
+        .nav {
+             flex-direction: column;
+             align-items: center;
+        }
+        .nav a {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        body {
+            padding: 10px;
+        }
+        .container {
+            padding: 0 5px;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+        }
+        .typing-animation {
+            font-size: 1.2em;
+        }
+        .content-box, .profile, .card {
+            padding: 15px;
+        }
+        .section-title {
+            font-size: 1.2em; /* Keep slightly larger */
+        }
+         .sub-section-title {
+            font-size: 1.0em;
+        }
+        .boot-sequence {
+            padding-left: 5%;
+        }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="boot-sequence" id="boot-sequence">
+    <div>Initializing system...</div>
+  </div>
+
+  <div class="container">
+    <div class="nav">
+      <span class="prompt-user">ranjan@portfolio</span><span class="prompt">:</span><span class="accent">~</span><span class="prompt">$</span>&nbsp;
+      <a href="#home" class="nav-link active" data-section="home">cd ~</a>
+      <a href="#expertise" class="nav-link" data-section="expertise">ls ./expertise</a>
+      <a href="#projects" class="nav-link" data-section="projects">ls ./projects</a>
+      <a href="#contributions" class="nav-link" data-section="contributions">ls ./contributions</a>
+    </div>
+
+    <div id="home" class="section active">
+      <div class="profile">
+        <div class="profile-img">RY</div> <div class="profile-info">
+          <h2 class="typing-animation">Hi, I'm <span class="accent">Ranjan Yadav</span></h2>
+          <p class="data-item">Role:<span class="item-name">Data Engineer</span></p>
+          <p class="data-item">Focus:<span class="item-name">Cloud Architecture</span></p>
+          <p class="data-item">Tools:<span class="item-name">Spark, Airflow, SQL</span></p>
+          <p class="data-item">Passion:<span class="item-name">Big Data & Pipelines</span></p>
+        </div>
+      </div>
+
+      <div class="content-box">
+          <h2 class="section-title"><span class="prompt">$</span> cat /etc/motd</h2>
+          <div id="home-about">
+            </div>
+      </div>
+
+      <div class="content-box">
+           <h2 class="section-title"><span class="prompt">$</span> find / -name social_links</h2>
+          <div>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="accent" style="text-decoration: underline; margin-right: 15px;">GitHub</a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="accent" style="text-decoration: underline; margin-right: 15px;">LinkedIn</a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="accent" style="text-decoration: underline; margin-right: 15px;">Blog</a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="accent" style="text-decoration: underline;">Stack Overflow</a>
+          </div>
+      </div>
+    </div>
+
+    <div id="expertise" class="section">
+       <h2 class="section-title"><span class="prompt">$</span> ./show_stack.sh --verbose</h2>
+
+       <div class="content-box">
+           <h3 class="sub-section-title"><span class="prompt">&gt;</span> [Languages]</h3>
+           <div class="skills">
+               <div class="skill-tag">Python</div>
+               <div class="skill-tag">SQL</div>
+               <div class="skill-tag">Scala</div>
+               <div class="skill-tag">Java</div>
+               <div class="skill-tag">Bash</div>
+           </div>
+       </div>
+
+       <div class="content-box">
+            <h3 class="sub-section-title"><span class="prompt">&gt;</span> [Big Data & Streaming]</h3>
+           <div class="skills">
+               <div class="skill-tag">Apache Spark</div>
+               <div class="skill-tag">Apache Kafka</div>
+               <div class="skill-tag">Hadoop Ecosystem</div>
+               <div class="skill-tag">Apache Flink</div>
+               <div class="skill-tag">Databricks</div>
+           </div>
+       </div>
+
+       <div class="content-box">
+            <h3 class="sub-section-title"><span class="prompt">&gt;</span> [Databases & Warehouses]</h3>
+           <div class="skills">
+               <div class="skill-tag">PostgreSQL</div>
+               <div class="skill-tag">MySQL</div>
+               <div class="skill-tag">Snowflake</div>
+               <div class="skill-tag">AWS Redshift</div>
+               <div class="skill-tag">Google BigQuery</div>
+               <div class="skill-tag">NoSQL (DynamoDB, Cassandra)</div>
+           </div>
+       </div>
+
+        <div class="content-box">
+            <h3 class="sub-section-title"><span class="prompt">&gt;</span> [Cloud Platforms]</h3>
+           <div class="skills">
+               <div class="skill-tag">AWS</div>
+               <div class="skill-tag">Azure</div>
+               <div class="skill-tag">GCP</div>
+           </div>
+       </div>
+
+       <div class="content-box">
+            <h3 class="sub-section-title"><span class="prompt">&gt;</span> [Tools & Orchestration]</h3>
+           <div class="skills">
+               <div class="skill-tag">Apache Airflow</div>
+               <div class="skill-tag">Docker</div>
+               <div class="skill-tag">Kubernetes</div>
+               <div class="skill-tag">Terraform</div>
+               <div class="skill-tag">Git / GitHub Actions</div>
+               <div class="skill-tag">CI/CD</div>
+           </div>
+       </div>
+
+        <div class="content-box">
+             <h3 class="sub-section-title"><span class="prompt">&gt;</span> [Data Visualization]</h3>
+            <div class="skills">
+              <div class="skill-tag">Tableau</div>
+              <div class="skill-tag">Power BI</div>
+              <div class="skill-tag">Looker</div>
+              <div class="skill-tag">Matplotlib/Seaborn</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="projects" class="section">
+      <h2 class="section-title"><span class="prompt">$</span> ls -l /var/log/projects/</h2>
+
+      <div class="cards-container">
+        <div class="card">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="link-icon" title="View Project (Placeholder)">[src]</a>
+          <h3 class="card-title">// Real-Time Analytics Platform</h3>
+          <p class="card-desc">
+            Developed a scalable streaming pipeline using Kafka, Spark Streaming, and Druid to ingest and analyze clickstream data, providing dashboards with sub-second latency.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Kafka</span>
+            <span class="project-tag">Spark Streaming</span>
+            <span class="project-tag">Druid</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">AWS</span>
+          </div>
+        </div>
+
+        <div class="card">
+           <a href="#" target="_blank" rel="noopener noreferrer" class="link-icon" title="View Project (Placeholder)">[src]</a>
+          <h3 class="card-title">// Cloud Data Warehouse Migration</h3>
+          <p class="card-desc">
+            Led the migration of an on-premise data warehouse to Snowflake, designing new schemas, optimizing ETL jobs (using Airflow & dbt), and reducing query times by 60%.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Snowflake</span>
+            <span class="project-tag">Airflow</span>
+            <span class="project-tag">dbt</span>
+            <span class="project-tag">SQL</span>
+            <span class="project-tag">Data Modeling</span>
+          </div>
+        </div>
+
+        <div class="card">
+           <a href="#" target="_blank" rel="noopener noreferrer" class="link-icon" title="View Project (Placeholder)">[src]</a>
+          <h3 class="card-title">// Batch Processing Framework</h3>
+          <p class="card-desc">
+            Built a robust batch data processing framework on AWS using S3 Data Lake, PySpark on EMR, and Airflow for orchestration, handling terabytes of daily data.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">PySpark</span>
+            <span class="project-tag">AWS EMR</span>
+            <span class="project-tag">S3</span>
+            <span class="project-tag">Airflow</span>
+            <span class="project-tag">Scala</span>
+          </div>
+        </div>
+
+        <div class="card">
+           <a href="#" target="_blank" rel="noopener noreferrer" class="link-icon" title="View Project (Placeholder)">[src]</a>
+          <h3 class="card-title">// Data Quality Monitoring System</h3>
+          <p class="card-desc">
+            Implemented an automated data quality monitoring system using Great Expectations integrated with Airflow DAGs to validate data pipelines and alert on anomalies.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Data Quality</span>
+            <span class="project-tag">Great Expectations</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Airflow</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contributions" class="section">
+       <h2 class="section-title"><span class="prompt">$</span> git log --author="Ranjan"</h2>
+
+      <div class="cards-container">
+        <div class="card">
+           <a href="#" target="_blank" rel="noopener noreferrer" class="link-icon" title="View Contribution (Placeholder)">[commit]</a>
+          <h3 class="card-title">// Apache Airflow Provider Enhancement</h3>
+          <p class="card-desc">
+            Contributed code to enhance the AWS provider for Apache Airflow, adding new operators and improving existing sensor logic. Merged into main branch (v2.x).
+          </p>
+           <div class="project-tags">
+            <span class="project-tag">Open Source</span>
+            <span class="project-tag">Airflow</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">AWS</span>
+          </div>
+        </div>
+
+        <div class="card">
+           <a href="#" target="_blank" rel="noopener noreferrer" class="link-icon" title="View Contribution (Placeholder)">[article]</a>
+          <h3 class="card-title">// Blog Series: Optimizing Spark Jobs</h3>
+          <p class="card-desc">
+            Authored a 5-part blog series detailing techniques for performance tuning Apache Spark applications, covering partitioning, caching, and memory management.
+          </p>
+           <div class="project-tags">
+            <span class="project-tag">Writing</span>
+            <span class="project-tag">Spark</span>
+            <span class="project-tag">Tuning</span>
+          </div>
+        </div>
+
+        <div class="card">
+           <a href="#" target="_blank" rel="noopener noreferrer" class="link-icon" title="View Contribution (Placeholder)">[slides]</a>
+          <h3 class="card-title">// Talk: Modern Data Lake Architectures</h3>
+          <p class="card-desc">
+            Presented at Local Data Meetup (2024). Discussed modern data lake design patterns, comparing Delta Lake, Iceberg, and Hudi, and their integration with cloud services.
+          </p>
+           <div class="project-tags">
+            <span class="project-tag">Speaking</span>
+            <span class="project-tag">Data Lake</span>
+            <span class="project-tag">Architecture</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer">
+        <span class="accent">// process complete</span> - crafted by ranjan
+    </p>
+
+  </div> <script>
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Select necessary elements
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('.section');
+      const bootSequence = document.getElementById('boot-sequence');
+      const homeAboutContainer = document.getElementById('home-about');
+
+      // Content for the 'about' section terminal lines
+      const aboutLines = [
+        "building scalable data pipelines (TBs/day)",
+        "optimizing complex ETL/ELT workflows",
+        "designing cloud data warehouses (Snowflake, Redshift)",
+        "implementing data quality & monitoring",
+        "...", // Represents a break or passage of time
+        "tech: Spark, Kafka, Airflow, AWS/Azure/GCP",
+        "langs: Python, SQL, Scala",
+        "focus: data modeling, architecture, automation"
+      ];
+
+      // Function to handle navigation between sections
+      function navigateToSection(sectionId) {
+          // Remove active state from all links and sections
+          navLinks.forEach(el => el.classList.remove('active'));
+          sections.forEach(section => {
+            section.classList.remove('active', 'fade-in');
+          });
+
+          // Find the link and section corresponding to the sectionId
+          const link = document.querySelector(`.nav-link[data-section="${sectionId}"]`);
+          const activeSection = document.getElementById(sectionId);
+
+          // If both link and section exist, activate them
+          if (link && activeSection) {
+              link.classList.add('active');
+              activeSection.classList.add('active');
+
+              // Add fade-in effect after a short delay
+              requestAnimationFrame(() => {
+                  setTimeout(() => {
+                      activeSection.classList.add('fade-in');
+                  }, 10); // Minimal delay
+              });
+
+
+              // Update browser history without reloading the page
+              if (`#${sectionId}` !== window.location.hash) {
+                  history.pushState(null, null, `#${sectionId}`);
+              }
+
+              // If navigating to 'home', simulate the terminal lines in the 'about' section
+              if (sectionId === 'home' && homeAboutContainer) {
+                  simulateTerminalLines(homeAboutContainer, aboutLines);
+              }
+          } else {
+              // Fallback to the 'home' section if the requested sectionId is invalid
+              console.warn(`Section with id "${sectionId}" not found. Falling back to home.`);
+              navigateToSection('home');
+          }
+      }
+
+      // Function to simulate the terminal line typing effect
+      function simulateTerminalLines(container, lines) {
+          // Ensure the container element exists
+          if (!container) {
+              console.error("About section container not found for terminal simulation.");
+              return;
+          }
+          // Clear any previous lines
+          container.innerHTML = '';
+          // Create and animate each line
+          lines.forEach((line, index) => {
+              if (line === "...") {
+                  // Add a visual break for "..."
+                  const br = document.createElement('br');
+                  br.style.opacity = 0; // Start hidden
+                  br.style.animation = `fadeInLine 0.5s ${index * 80}ms forwards`; // Apply fade
+                  container.appendChild(br);
+              } else {
+                  // Create a div for the line
+                  const div = document.createElement('div');
+                  div.classList.add('terminal-line');
+                  div.textContent = line; // Use textContent for security
+                  // Apply animation delay for staggered effect
+                  div.style.animationDelay = `${index * 80}ms`; // Slightly faster delay
+                  container.appendChild(div);
+              }
+          });
+      }
+
+      // Add click event listeners to all navigation links
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent default anchor link behavior
+          const sectionToShow = this.getAttribute('data-section');
+          navigateToSection(sectionToShow);
+        });
+      });
+
+      // Function to handle changes in the URL hash
+      function handleHashChange() {
+          const hash = window.location.hash.substring(1);
+          const sectionId = hash || 'home';
+          if (document.getElementById(sectionId)) {
+              navigateToSection(sectionId);
+          } else {
+              navigateToSection('home');
+          }
+      }
+
+      // Function to initialize the page, including the boot sequence
+      function initializePage() {
+          // Boot sequence messages
+          const bootMessages = [
+              { text: "Loading modules...", status: "OK" },
+              { text: "Connecting to network...", status: "OK" },
+              { text: "Mounting file systems...", status: "OK" },
+              { text: "Starting services...", status: "OK" },
+              { text: "System ready. Welcome!", status: "WELCOME" } // Special status for styling
+          ];
+          let bootIndex = 0;
+          const initialLine = bootSequence ? bootSequence.firstElementChild : null;
+
+          if (!bootSequence || !initialLine) {
+              console.error("Boot sequence element or initial line not found! Skipping animation.");
+              handleHashChange();
+              return;
+          }
+
+          // Clear initial content and re-add first line for animation control
+          const initialText = initialLine.textContent;
+          bootSequence.innerHTML = ''; // Clear static content
+          const firstLineDiv = document.createElement('div');
+          firstLineDiv.textContent = initialText;
+          firstLineDiv.style.opacity = '0'; // Start hidden
+          bootSequence.appendChild(firstLineDiv);
+
+
+          // Function to add next boot message with delay
+          function addBootMessage() {
+              if (bootIndex < bootMessages.length) {
+                  const msgData = bootMessages[bootIndex];
+                  const msgDiv = document.createElement('div');
+                  msgDiv.textContent = msgData.text;
+
+                  // Add status span if applicable
+                  if (msgData.status === "OK") {
+                      const statusSpan = document.createElement('span');
+                      statusSpan.classList.add('ok');
+                      statusSpan.textContent = '[OK]';
+                      msgDiv.appendChild(statusSpan);
+                  } else if (msgData.status === "WELCOME") {
+                      msgDiv.classList.add('welcome'); // Add class for special styling
+                  }
+
+                  msgDiv.style.animationDelay = `${(bootIndex + 1) * 100}ms`; // Stagger animation (start after first line)
+                  bootSequence.appendChild(msgDiv);
+                  bootIndex++;
+                  setTimeout(addBootMessage, 150); // Time between adding each message element
+              } else {
+                  // All messages added, wait then fade out
+                  setTimeout(() => {
+                      bootSequence.style.opacity = '0';
+                      setTimeout(() => {
+                          if (bootSequence.parentNode) {
+                              bootSequence.parentNode.removeChild(bootSequence);
+                          }
+                          handleHashChange(); // Show content
+                      }, 600); // Match CSS transition duration + delay
+                  }, 700); // Delay before starting fade out
+              }
+          }
+
+          // Start the first line animation, then the rest
+           firstLineDiv.style.animation = `fadeInLine 0.4s 50ms forwards`; // Animate first line
+           setTimeout(addBootMessage, 100); // Start adding subsequent messages
+
+      }
+
+      // Listen for hash changes
+      window.addEventListener('hashchange', handleHashChange);
+
+      // Start the initialization process
+      initializePage();
+
+    });
+  </script>
+</body>
+</html>
