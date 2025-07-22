@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -878,5 +878,1144 @@
 
     });
   </script>
+</body>
+</html>
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranjan Yadav | Data Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&family=Comfortaa:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Nisha Theme Colors */
+            --bg-color: #0a0a0a; /* Darker background from Nisha */
+            --text-color: #d4d4d4; /* Light grey text from Nisha */
+            --accent-color: #fb7185cc; /* Pink/red accent from Nisha */
+            --secondary-accent: #4ade80; /* Green accent from Nisha's status dot */
+            --border-color: #404040; /* Dark grey border from Nisha */
+            --hover-color: #a1a1a1; /* Lighter grey for general hover */
+            --prompt-color: #fb7185; /* Hot pink prompt, similar to Nisha's accent */
+            --title-color: #fb7185; /* Pink/red for main titles, similar to Nisha's accent */
+            --bullet-color: #fb7185; /* Consistent pink/red for bullets */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inconsolata', monospace; /* Primary font from Nisha */
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding: 2.5rem 1.25rem; /* Adjusted padding to match Nisha's container */
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            max-width: 60rem; /* Increased max-width for better desktop layout */
+            width: 100%;
+            margin: 0 auto; /* Center content */
+        }
+
+        /* Navigation bar styling */
+        .nav {
+            display: flex;
+            flex-direction: column; /* Default to column for mobile */
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            width: 100%; /* Ensure it spans full width */
+        }
+
+        .nav a {
+            margin: 0.5rem 0; /* Adjusted margin for mobile stacking */
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 6px 12px;
+            border-radius: 9999px; /* Rounded corners like Nisha's social links */
+            border: 1px solid transparent; /* Transparent border for consistency */
+            cursor: pointer;
+            transition: all 0.5s ease-in-out; /* Smoother transition */
+        }
+        .nav a:hover {
+            color: var(--hover-color);
+            border-color: var(--border-color); /* Border on hover */
+            transform: scale(1.05); /* Slight scale on hover */
+        }
+
+        /* Style for the active navigation link */
+        .nav a.active {
+            color: var(--accent-color);
+            font-weight: bold;
+            background-color: transparent;
+            border-color: var(--accent-color); /* Accent border for active */
+        }
+        .nav a.active:hover {
+            color: var(--hover-color);
+            border-color: var(--hover-color);
+        }
+
+        /* Terminal prompt style */
+        .terminal-prompt {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            width: 100%; /* Ensure it spans full width */
+        }
+
+        .prompt-user {
+            color: var(--secondary-accent);
+        }
+
+        .prompt-symbol {
+            color: var(--prompt-color);
+            margin-right: 5px;
+        }
+
+        /* General section styling */
+        .section {
+            margin-bottom: 40px;
+            display: none;
+            width: 100%; /* Ensure sections span full width */
+        }
+        .section.active {
+            display: block;
+        }
+
+        /* Section title styling */
+        .section-title {
+            font-size: 1.5rem; /* Larger font size from Nisha */
+            color: var(--title-color); /* Pink/red for main section titles */
+            font-weight: 300; /* Lighter weight from Nisha */
+            padding-top: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px dotted rgba(251, 113, 133, 0.3); /* Dotted underline from Nisha */
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            cursor: default;
+        }
+        .section-title .prompt {
+            font-size: 1em; /* Keep prompt size relative to title */
+        }
+
+        /* Sub-section title styling (like in expertise) */
+        .sub-section-title {
+            color: var(--accent-color); /* Pink/red for sub-titles */
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+        }
+
+        /* Box container for content within sections */
+        .content-box {
+            background-color: rgba(0, 0, 0, 0.1); /* Subtle background from Nisha's project items */
+            border: 1px solid var(--border-color);
+            border-radius: 8px; /* Rounded corners from Nisha */
+            padding: 20px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease; /* Smooth transition for hover */
+            box-shadow: 0 0 10px rgba(0, 216, 255, 0.1); /* Subtle glow */
+        }
+        .content-box:hover {
+            transform: translateY(-3px); /* Slight lift on hover */
+            box-shadow: 0 3px 15px rgba(0, 216, 255, 0.3); /* Enhanced glow on hover */
+        }
+
+        /* Profile section layout */
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            background-color: transparent;
+            border: none; /* Removed main border as per Nisha's about section */
+            padding: 25px 0; /* Adjusted padding */
+            box-shadow: none;
+        }
+
+        /* Profile image placeholder */
+        .profile-img {
+            width: 8rem; /* Matched Nisha's avatar size */
+            height: 8rem; /* Matched Nisha's avatar size */
+            border-radius: 9999px; /* Circular from Nisha */
+            margin-right: 30px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradient from Nisha */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white; /* White initials */
+            font-size: 2rem; /* Larger font for initials */
+            font-weight: bold;
+            flex-shrink: 0;
+            border: none; /* Removed border, replaced by gradient */
+            box-shadow: 0 0 15px rgba(0, 216, 255, 0.5); /* Neon glow effect from Nisha */
+        }
+
+        .profile-info p {
+            margin: 6px 0;
+            color: var(--text-color);
+            font-size: 0.95em;
+        }
+        /* Data Engineer theme representation */
+        .profile-info .data-item::before {
+            content: "[";
+            color: var(--secondary-accent);
+            margin-right: 4px;
+        }
+        .profile-info .data-item::after {
+            content: "]";
+            color: var(--secondary-accent);
+            margin-left: 4px;
+        }
+        .profile-info .data-item .item-name {
+            color: var(--accent-color); /* Pink/red item name */
+            margin: 0 5px;
+        }
+
+        .profile-info h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--title-color);
+        }
+
+        /* Accent color for specific text */
+        .highlight { /* Renamed from .accent to match Nisha's .highlight */
+            color: var(--secondary-accent); /* Green highlight */
+            font-weight: bold;
+        }
+
+        /* Skills section layout */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* Individual skill tag styling */
+        .skill-tag {
+            background-color: rgba(251, 113, 133, 0.1); /* Faint pink background from Nisha's project description */
+            color: var(--accent-color); /* Pink/red text */
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.85em;
+            border: 1px solid rgba(251, 113, 133, 0.3); /* Faint pink border */
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+        .skill-tag:hover {
+            background-color: rgba(251, 113, 133, 0.2);
+            color: var(--hover-color);
+            border-color: var(--accent-color);
+        }
+
+        /* Container for project/research cards */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem; /* Increased gap from Nisha's projects-list */
+        }
+
+        /* Individual card styling (projects/contributions) */
+        .card {
+            background-color: rgba(0, 0, 0, 0.1); /* Subtle background from Nisha's project items */
+            border: 1px solid var(--border-color);
+            border-radius: 8px; /* Rounded corners from Nisha */
+            padding: 1rem; /* Adjusted padding from Nisha */
+            position: relative;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            min-height: 180px;
+            box-shadow: 0 0 10px rgba(0, 216, 255, 0.1); /* Subtle glow */
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Lift effect on hover from Nisha */
+            box-shadow: 0 5px 20px rgba(0, 216, 255, 0.4); /* Enhanced glow on hover from Nisha */
+        }
+
+        /* Card title styling */
+        .card-title {
+            color: var(--title-color); /* Pink/red title */
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.25rem; /* Larger font size from Nisha */
+            font-weight: 600; /* Bold from Nisha */
+        }
+
+        /* Card description styling */
+        .card-desc {
+            margin-bottom: 15px;
+            color: var(--text-color);
+            flex-grow: 1;
+            font-size: 0.9em;
+        }
+
+        /* Container for project tags */
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+        }
+
+        /* Individual project tag styling */
+        .project-tag {
+            background-color: rgba(251, 113, 133, 0.1); /* Faint pink background */
+            color: var(--accent-color); /* Pink/red text */
+            border: 1px solid rgba(251, 113, 133, 0.3); /* Faint pink border */
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+        .project-tag:hover {
+            background-color: rgba(251, 113, 133, 0.2);
+            color: var(--hover-color);
+            border-color: var(--accent-color);
+        }
+
+        /* Link icon styling */
+        .link-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: var(--text-color);
+            opacity: 0.8; /* Slightly more visible */
+            transition: color 0.3s ease, opacity 0.3s ease;
+            font-size: 0.9em;
+            text-decoration: none;
+            padding: 0.5rem; /* Padding for click target */
+            border-radius: 9999px; /* Rounded from Nisha */
+            border: 1px solid transparent; /* Transparent border */
+        }
+        .card:hover .link-icon {
+            color: var(--hover-color); /* White on hover */
+            opacity: 1;
+            border-color: var(--border-color); /* Border on hover */
+        }
+
+        /* Typing animation for the main heading */
+        .typing-animation {
+            display: inline-block;
+            overflow: hidden;
+            border-right: 3px solid var(--accent-color); /* Pink/red blinking cursor */
+            white-space: nowrap;
+            margin: 0;
+            letter-spacing: 0.1em;
+            animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+            color: var(--title-color);
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .typing-animation .highlight { /* Changed from .accent to .highlight */
+            color: var(--accent-color); /* Pink/red accent within */
+            font-weight: bold;
+        }
+
+        /* Keyframes for typing animation */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* Keyframes for blinking cursor */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-color) } /* Pink/red cursor */
+        }
+
+        /* Terminal line effect (used in 'about' section) */
+        .terminal-line {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            opacity: 0;
+            animation: fadeInLine 0.5s forwards;
+            color: var(--text-color);
+            font-size: 0.95em;
+        }
+
+        .terminal-line::before {
+            content: " > "; /* Prompt for about lines */
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--secondary-accent); /* Green prompt */
+            font-weight: bold;
+        }
+
+        /* Keyframes for terminal line fade-in */
+        @keyframes fadeInLine {
+            to { opacity: 1; }
+        }
+
+        /* Page transition effect */
+        .fade-in {
+            animation: fadeIn 0.4s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Footer styling */
+        .footer {
+            border-top: 1px solid var(--border-color);
+            height: 1px;
+            width: 100%;
+            margin-top: 2.5rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.75rem;
+            color: var(--text-color);
+            font-size: 0.875rem;
+            flex-direction: column; /* Default to column for mobile */
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-content .highlight { /* Changed from .accent to .highlight */
+            color: var(--secondary-accent); /* Green accent in footer */
+        }
+
+        .clock {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        /* Project Description Toggle (from Nisha) */
+        .project-description {
+            padding: 0.75rem;
+            color: var(--text-color);
+            border: 1px solid rgba(251, 113, 133, 0.4); /* Border with accent-color alpha */
+            margin-top: 0.5rem;
+            display: none;
+            background-color: rgba(251, 113, 133, 0.05); /* Very subtle background for description */
+            border-radius: 4px;
+        }
+
+        .project-description.open {
+            display: block;
+        }
+
+        .chevron {
+            font-size: 1.5rem; /* Larger chevron */
+            cursor: pointer;
+            color: var(--prompt-color); /* Hot pink chevron */
+            transition: transform 0.3s ease;
+            margin-left: auto; /* Push to the right */
+        }
+
+        .chevron.open {
+            transform: rotate(90deg);
+        }
+
+        /* Boot sequence styling */
+        .boot-sequence {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 9999;
+            font-family: 'Inconsolata', monospace; /* Consistent font */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 10%;
+            opacity: 1;
+            transition: opacity 0.5s ease-out 0.5s;
+        }
+        .boot-sequence div {
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeInLine 0.4s forwards;
+        }
+        .boot-sequence .ok {
+            color: var(--secondary-accent);
+            margin-left: 10px;
+        }
+        .boot-sequence .welcome {
+            color: var(--title-color);
+            font-weight: bold;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 640px) {
+            .nav {
+                flex-direction: row;
+            }
+            .nav a {
+                margin: 0 10px; /* Reset margin for desktop */
+            }
+            .profile {
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                padding: 25px; /* Add back padding for desktop */
+            }
+            .profile-img {
+                margin-right: 30px;
+                margin-bottom: 0;
+            }
+            .typing-animation {
+                font-size: 1.8em; /* Slightly larger for desktop */
+                white-space: nowrap;
+                border-right: 3px solid var(--accent-color);
+                animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+                width: 100%; /* Allow typing animation to control width */
+                text-align: left;
+                display: inline-block;
+            }
+            .footer-content {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            .profile {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .profile-img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .typing-animation {
+                font-size: 1.3em;
+                white-space: normal;
+                border-right: none;
+                animation: none;
+                width: auto;
+                text-align: center;
+                display: block;
+            }
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav a {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 0 5px;
+            }
+            .profile-img {
+                width: 100px;
+                height: 100px;
+                font-size: 20px;
+            }
+            .typing-animation {
+                font-size: 1.2em;
+            }
+            .content-box, .profile, .card {
+                padding: 15px;
+            }
+            .section-title {
+                font-size: 1.2em;
+            }
+            .sub-section-title {
+                font-size: 1.0em;
+            }
+            .boot-sequence {
+                padding-left: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="boot-sequence" id="boot-sequence">
+        <div>Initializing system...</div>
+    </div>
+
+    <div class="container">
+        <div class="nav">
+            <span class="prompt-user">ranjan@portfolio</span><span class="prompt-symbol">:$ ~ </span>
+            <a href="#home" class="nav-link active" data-section="home">cd ~</a>
+            <a href="#expertise" class="nav-link" data-section="expertise">ls ./expertise</a>
+            <a href="#projects" class="nav-link" data-section="projects">ls ./projects</a>
+            <a href="#contributions" class="nav-link" data-section="contributions">ls ./contributions</a>
+        </div>
+
+        <div id="home" class="section active">
+            <div class="profile">
+                <div class="profile-img">RY</div>
+                <div class="profile-info">
+                    <h2 class="typing-animation">Hi, I'm <span class="highlight">Ranjan Yadav</span></h2>
+                    <p class="data-item">Role:<span class="item-name">Data Engineer</span></p>
+                    <p class="data-item">Focus:<span class="item-name">Cloud Architecture</span></p>
+                    <p class="data-item">Tools:<span class="item-name">Spark, Airflow, SQL</span></p>
+                    <p class="data-item">Passion:<span class="item-name">Big Data & Pipelines</span></p>
+                </div>
+            </div>
+
+            <div class="terminal-prompt">
+                <span class="prompt-user">ranjan@portfolio</span><span class="prompt-symbol">:$ ~ </span><span class="prompt-command">cat /etc/motd</span>
+            </div>
+            <div class="content-box">
+                <div id="home-about">
+                </div>
+            </div>
+
+            <div class="terminal-prompt">
+                <span class="prompt-user">ranjan@portfolio</span><span class="prompt-symbol">:$ ~ </span><span class="prompt-command">find / -name social_links</span>
+            </div>
+            <div class="content-box">
+                <div class="social-links-container">
+                    <a href="https://github.com/yourusername" target="_blank" class="social-link" title="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                            <path d="M9 18c-4.51 2-5-2-7-2"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link" title="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect width="4" height="12" x="2" y="9"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" title="Blog">
+                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
+                            <path d="M9 1h6"/>
+                            <path d="M12 11v6"/>
+                            <path d="M10 13l2-2 2 2"/>
+                        </svg>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" title="Stack Overflow">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 12V4h16v8"/>
+                            <path d="M12 16v4"/>
+                            <path d="M16 16v4"/>
+                            <path d="M8 16v4"/>
+                            <path d="M20 12h-2c-2.2 0-4-1.8-4-4V4"/>
+                            <path d="M4 12h2c2.2 0 4-1.8 4-4V4"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="expertise" class="section">
+            <div class="terminal-prompt">
+                <span class="prompt-user">ranjan@portfolio</span><span class="prompt-symbol">:$ ~ </span><span class="prompt-command">./show_stack.sh --verbose</span>
+            </div>
+            <div class="section-title">Expertise</div>
+
+            <div class="content-box">
+                <h3 class="sub-section-title"><span class="prompt-symbol">></span> [Languages]</h3>
+                <div class="skills">
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">SQL</div>
+                    <div class="skill-tag">Scala</div>
+                    <div class="skill-tag">Java</div>
+                    <div class="skill-tag">Bash</div>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3 class="sub-section-title"><span class="prompt-symbol">></span> [Big Data & Streaming]</h3>
+                <div class="skills">
+                    <div class="skill-tag">Apache Spark</div>
+                    <div class="skill-tag">Apache Kafka</div>
+                    <div class="skill-tag">Hadoop Ecosystem</div>
+                    <div class="skill-tag">Apache Flink</div>
+                    <div class="skill-tag">Databricks</div>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3 class="sub-section-title"><span class="prompt-symbol">></span> [Databases & Warehouses]</h3>
+                <div class="skills">
+                    <div class="skill-tag">PostgreSQL</div>
+                    <div class="skill-tag">MySQL</div>
+                    <div class="skill-tag">Snowflake</div>
+                    <div class="skill-tag">AWS Redshift</div>
+                    <div class="skill-tag">Google BigQuery</div>
+                    <div class="skill-tag">NoSQL (DynamoDB, Cassandra)</div>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3 class="sub-section-title"><span class="prompt-symbol">></span> [Cloud Platforms]</h3>
+                <div class="skills">
+                    <div class="skill-tag">AWS</div>
+                    <div class="skill-tag">Azure</div>
+                    <div class="skill-tag">GCP</div>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3 class="sub-section-title"><span class="prompt-symbol">></span> [Tools & Orchestration]</h3>
+                <div class="skills">
+                    <div class="skill-tag">Apache Airflow</div>
+                    <div class="skill-tag">Docker</div>
+                    <div class="skill-tag">Kubernetes</div>
+                    <div class="skill-tag">Terraform</div>
+                    <div class="skill-tag">Git / GitHub Actions</div>
+                    <div class="skill-tag">CI/CD</div>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3 class="sub-section-title"><span class="prompt-symbol">></span> [Data Visualization]</h3>
+                <div class="skills">
+                    <div class="skill-tag">Tableau</div>
+                    <div class="skill-tag">Power BI</div>
+                    <div class="skill-tag">Looker</div>
+                    <div class="skill-tag">Matplotlib/Seaborn</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="projects" class="section">
+            <div class="terminal-prompt">
+                <span class="prompt-user">ranjan@portfolio</span><span class="prompt-symbol">:$ ~ </span><span class="prompt-command">ls -l /var/log/projects/</span>
+            </div>
+            <div class="section-title">Projects</div>
+
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-header" onclick="toggleDescription(0)">
+                        <h3 class="card-title">// Real-Time Analytics Platform</h3>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="link-icon" title="View Project (Placeholder)">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </a>
+                        <div class="chevron" onclick="event.stopPropagation(); toggleDescription(0)">⟩</div>
+                    </div>
+                    <p class="card-desc" id="desc-0">
+                        Developed a scalable streaming pipeline using Kafka, Spark Streaming, and Druid to ingest and analyze clickstream data, providing dashboards with sub-second latency.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Kafka</span>
+                        <span class="project-tag">Spark Streaming</span>
+                        <span class="project-tag">Druid</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">AWS</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" onclick="toggleDescription(1)">
+                        <h3 class="card-title">// Cloud Data Warehouse Migration</h3>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="link-icon" title="View Project (Placeholder)">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </a>
+                        <div class="chevron" onclick="event.stopPropagation(); toggleDescription(1)">⟩</div>
+                    </div>
+                    <p class="card-desc" id="desc-1">
+                        Led the migration of an on-premise data warehouse to Snowflake, designing new schemas, optimizing ETL jobs (using Airflow & dbt), and reducing query times by 60%.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Snowflake</span>
+                        <span class="project-tag">Airflow</span>
+                        <span class="project-tag">dbt</span>
+                        <span class="project-tag">SQL</span>
+                        <span class="project-tag">Data Modeling</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" onclick="toggleDescription(2)">
+                        <h3 class="card-title">// Batch Processing Framework</h3>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="link-icon" title="View Project (Placeholder)">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </a>
+                        <div class="chevron" onclick="event.stopPropagation(); toggleDescription(2)">⟩</div>
+                    </div>
+                    <p class="card-desc" id="desc-2">
+                        Built a robust batch data processing framework on AWS using S3 Data Lake, PySpark on EMR, and Airflow for orchestration, handling terabytes of daily data.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">PySpark</span>
+                        <span class="project-tag">AWS EMR</span>
+                        <span class="project-tag">S3</span>
+                        <span class="project-tag">Airflow</span>
+                        <span class="project-tag">Scala</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" onclick="toggleDescription(3)">
+                        <h3 class="card-title">// Data Quality Monitoring System</h3>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="link-icon" title="View Project (Placeholder)">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </a>
+                        <div class="chevron" onclick="event.stopPropagation(); toggleDescription(3)">⟩</div>
+                    </div>
+                    <p class="card-desc" id="desc-3">
+                        Implemented an automated data quality monitoring system using Great Expectations integrated with Airflow DAGs to validate data pipelines and alert on anomalies.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Data Quality</span>
+                        <span class="project-tag">Great Expectations</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Airflow</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contributions" class="section">
+            <div class="terminal-prompt">
+                <span class="prompt-user">ranjan@portfolio</span><span class="prompt-symbol">:$ ~ </span><span class="prompt-command">git log --author="Ranjan"</span>
+            </div>
+            <div class="section-title">Contributions</div>
+
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-header" onclick="toggleDescription(4)">
+                        <h3 class="card-title">// Apache Airflow Provider Enhancement</h3>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="link-icon" title="View Contribution (Placeholder)">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </a>
+                        <div class="chevron" onclick="event.stopPropagation(); toggleDescription(4)">⟩</div>
+                    </div>
+                    <p class="card-desc" id="desc-4">
+                        Contributed code to enhance the AWS provider for Apache Airflow, adding new operators and improving existing sensor logic. Merged into main branch (v2.x).
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Open Source</span>
+                        <span class="project-tag">Airflow</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">AWS</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" onclick="toggleDescription(5)">
+                        <h3 class="card-title">// Blog Series: Optimizing Spark Jobs</h3>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="link-icon" title="View Contribution (Placeholder)">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </a>
+                        <div class="chevron" onclick="event.stopPropagation(); toggleDescription(5)">⟩</div>
+                    </div>
+                    <p class="card-desc" id="desc-5">
+                        Authored a 5-part blog series detailing techniques for performance tuning Apache Spark applications, covering partitioning, caching, and memory management.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Writing</span>
+                        <span class="project-tag">Spark</span>
+                        <span class="project-tag">Tuning</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" onclick="toggleDescription(6)">
+                        <h3 class="card-title">// Talk: Modern Data Lake Architectures</h3>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="link-icon" title="View Contribution (Placeholder)">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </a>
+                        <div class="chevron" onclick="event.stopPropagation(); toggleDescription(6)">⟩</div>
+                    </div>
+                    <p class="card-desc" id="desc-6">
+                        Presented at Local Data Meetup (2024). Discussed modern data lake design patterns, comparing Delta Lake, Iceberg, and Hudi, and their integration with cloud services.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Speaking</span>
+                        <span class="project-tag">Data Lake</span>
+                        <span class="project-tag">Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer"></div>
+        <div class="footer-content">
+            <span><span class="highlight">// process complete</span> - crafted by ranjan</span>
+            <div class="clock">
+                <span id="currentTime"></span>
+                <span id="currentLocation"></span>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select necessary elements
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.section');
+            const bootSequence = document.getElementById('boot-sequence');
+            const homeAboutContainer = document.getElementById('home-about');
+
+            // Content for the 'about' section terminal lines
+            const aboutLines = [
+                "building scalable data pipelines (TBs/day)",
+                "optimizing complex ETL/ELT workflows",
+                "designing cloud data warehouses (Snowflake, Redshift)",
+                "implementing data quality & monitoring",
+                "...", // Represents a break or passage of time
+                "tech: Spark, Kafka, Airflow, AWS/Azure/GCP",
+                "langs: Python, SQL, Scala",
+                "focus: data modeling, architecture, automation"
+            ];
+
+            // Function to handle navigation between sections
+            function navigateToSection(sectionId) {
+                // Remove active state from all links and sections
+                navLinks.forEach(el => el.classList.remove('active'));
+                sections.forEach(section => {
+                    section.classList.remove('active', 'fade-in');
+                });
+
+                // Find the link and section corresponding to the sectionId
+                const link = document.querySelector(`.nav-link[data-section="${sectionId}"]`);
+                const activeSection = document.getElementById(sectionId);
+
+                // If both link and section exist, activate them
+                if (link && activeSection) {
+                    link.classList.add('active');
+                    activeSection.classList.add('active');
+
+                    // Add fade-in effect after a short delay
+                    requestAnimationFrame(() => {
+                        setTimeout(() => {
+                            activeSection.classList.add('fade-in');
+                        }, 10); // Minimal delay
+                    });
+
+                    // Update browser history without reloading the page
+                    if (`#${sectionId}` !== window.location.hash) {
+                        history.pushState(null, null, `#${sectionId}`);
+                    }
+
+                    // If navigating to 'home', simulate the terminal lines in the 'about' section
+                    if (sectionId === 'home' && homeAboutContainer) {
+                        simulateTerminalLines(homeAboutContainer, aboutLines);
+                    }
+                } else {
+                    // Fallback to the 'home' section if the requested sectionId is invalid
+                    console.warn(`Section with id "${sectionId}" not found. Falling back to home.`);
+                    navigateToSection('home');
+                }
+            }
+
+            // Function to simulate the terminal line typing effect
+            function simulateTerminalLines(container, lines) {
+                // Ensure the container element exists
+                if (!container) {
+                    console.error("About section container not found for terminal simulation.");
+                    return;
+                }
+                // Clear any previous lines
+                container.innerHTML = '';
+                // Create and animate each line
+                lines.forEach((line, index) => {
+                    if (line === "...") {
+                        // Add a visual break for "..."
+                        const br = document.createElement('br');
+                        br.style.opacity = 0; // Start hidden
+                        br.style.animation = `fadeInLine 0.5s ${index * 80}ms forwards`; // Apply fade
+                        container.appendChild(br);
+                    } else {
+                        // Create a div for the line
+                        const div = document.createElement('div');
+                        div.classList.add('terminal-line');
+                        div.textContent = line; // Use textContent for security
+                        // Apply animation delay for staggered effect
+                        div.style.animationDelay = `${index * 80}ms`; // Slightly faster delay
+                        container.appendChild(div);
+                    }
+                });
+            }
+
+            // Add click event listeners to all navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor link behavior
+                    const sectionToShow = this.getAttribute('data-section');
+                    navigateToSection(sectionToShow);
+                });
+            });
+
+            // Function to handle changes in the URL hash
+            function handleHashChange() {
+                const hash = window.location.hash.substring(1);
+                const sectionId = hash || 'home';
+                if (document.getElementById(sectionId)) {
+                    navigateToSection(sectionId);
+                } else {
+                    navigateToSection('home');
+                }
+            }
+
+            // Function to initialize the page, including the boot sequence
+            function initializePage() {
+                // Boot sequence messages
+                const bootMessages = [
+                    { text: "Loading modules...", status: "OK" },
+                    { text: "Connecting to network...", status: "OK" },
+                    { text: "Mounting file systems...", status: "OK" },
+                    { text: "Starting services...", status: "OK" },
+                    { text: "System ready. Welcome!", status: "WELCOME" } // Special status for styling
+                ];
+                let bootIndex = 0;
+                const initialLine = bootSequence ? bootSequence.firstElementChild : null;
+
+                if (!bootSequence || !initialLine) {
+                    console.error("Boot sequence element or initial line not found! Skipping animation.");
+                    handleHashChange();
+                    return;
+                }
+
+                // Clear initial content and re-add first line for animation control
+                const initialText = initialLine.textContent;
+                bootSequence.innerHTML = ''; // Clear static content
+                const firstLineDiv = document.createElement('div');
+                firstLineDiv.textContent = initialText;
+                firstLineDiv.style.opacity = '0'; // Start hidden
+                bootSequence.appendChild(firstLineDiv);
+
+                // Function to add next boot message with delay
+                function addBootMessage() {
+                    if (bootIndex < bootMessages.length) {
+                        const msgData = bootMessages[bootIndex];
+                        const msgDiv = document.createElement('div');
+                        msgDiv.textContent = msgData.text;
+
+                        // Add status span if applicable
+                        if (msgData.status === "OK") {
+                            const statusSpan = document.createElement('span');
+                            statusSpan.classList.add('ok');
+                            statusSpan.textContent = '[OK]';
+                            msgDiv.appendChild(statusSpan);
+                        } else if (msgData.status === "WELCOME") {
+                            msgDiv.classList.add('welcome'); // Add class for special styling
+                        }
+
+                        msgDiv.style.animationDelay = `${(bootIndex + 1) * 100}ms`; // Stagger animation (start after first line)
+                        bootSequence.appendChild(msgDiv);
+                        bootIndex++;
+                        setTimeout(addBootMessage, 150); // Time between adding each message element
+                    } else {
+                        // All messages added, wait then fade out
+                        setTimeout(() => {
+                            bootSequence.style.opacity = '0';
+                            setTimeout(() => {
+                                if (bootSequence.parentNode) {
+                                    bootSequence.parentNode.removeChild(bootSequence);
+                                }
+                                handleHashChange(); // Show content
+                            }, 600); // Match CSS transition duration + delay
+                        }, 700); // Delay before starting fade out
+                    }
+                }
+
+                // Start the first line animation, then the rest
+                firstLineDiv.style.animation = `fadeInLine 0.4s 50ms forwards`; // Animate first line
+                setTimeout(addBootMessage, 100); // Start adding subsequent messages
+            }
+
+            // Listen for hash changes
+            window.addEventListener('hashchange', handleHashChange);
+
+            // Start the initialization process
+            initializePage();
+
+            // Project Description Toggle Functionality (from Nisha's script)
+            function toggleDescription(index) {
+                const description = document.getElementById(`desc-${index}`);
+                // Find the chevron within the same card as the description
+                const card = description.closest('.card');
+                const chevron = card ? card.querySelector('.chevron') : null;
+
+                if (description && chevron) {
+                    description.classList.toggle('open');
+                    chevron.classList.toggle('open');
+                }
+            }
+            // Attach toggleDescription to the global scope or directly to elements
+            window.toggleDescription = toggleDescription;
+
+
+            // Clock functionality (from Nisha's script)
+            function updateClock() {
+                const now = new Date();
+                const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+                const currentTimeElement = document.getElementById('currentTime');
+                const currentLocationElement = document.getElementById('currentLocation');
+
+                if (currentTimeElement) {
+                    currentTimeElement.textContent = now.toLocaleTimeString('en-US', options);
+                }
+                if (currentLocationElement) {
+                    currentLocationElement.textContent = 'Patna, India'; // Hardcoded as per your instruction
+                }
+            }
+
+            // Set interval for clock and initial call
+            setInterval(updateClock, 1000);
+            updateClock();
+
+            // Add a container for social links in the home section and apply Nisha's social-link styling
+            // This needs to be done manually in the HTML structure to reuse the class
+            // I've added a new .social-links-container for better layout control
+        });
+    </script>
 </body>
 </html>
