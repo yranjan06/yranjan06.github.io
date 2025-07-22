@@ -932,8 +932,9 @@
         /* Navigation bar styling */
         .nav {
             display: flex;
-            flex-direction: column; /* Default to column for mobile */
-            justify-content: space-between;
+            flex-direction: row; /* Default to column for mobile */
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
             margin-bottom: 30px;
             border-bottom: 1px solid var(--border-color);
@@ -942,7 +943,7 @@
         }
 
         .nav a {
-            margin: 0.5rem 0; /* Adjusted margin for mobile stacking */
+            margin: 0.25rem 0.5; /* Adjusted margin for mobile stacking */
             text-decoration: none;
             color: var(--text-color);
             padding: 6px 12px;
@@ -1426,10 +1427,12 @@
                 display: block;
             }
             .nav {
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: center;
                 align-items: center;
             }
             .nav a {
+                margin: 0.25rem 0.5rem;
                 margin-right: 0;
                 margin-bottom: 10px;
             }
