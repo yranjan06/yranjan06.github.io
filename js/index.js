@@ -454,7 +454,7 @@ const media_media = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + {"36":"d0106a8e22bb4a8d6de4","197":"c0acafdbe17d3a0178d8","548":"3aeb026a6c4beb83bfc1","573":"b1ec3c0c28bdeb38dbfc","840":"41c1bf4e0a9da36764a5","847":"d2765a8ced7adbab3982","853":"89f67fe3ee0e5cc0022f","960":"315d9d7e0c9cad81f065"}[chunkId] + ".js";
+/******/ 			return "js/" + {"36":"eb749422a01c19b9f7f2","197":"c0acafdbe17d3a0178d8","548":"3aeb026a6c4beb83bfc1","573":"b1ec3c0c28bdeb38dbfc","840":"41c1bf4e0a9da36764a5","847":"07605a3b68bcb2938b52","853":"89f67fe3ee0e5cc0022f","960":"315d9d7e0c9cad81f065"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -810,7 +810,91 @@ var localeHandler = __webpack_require__(788);
         );
     }
 });
+;// ./src/app/helpers/lazyLoading.js
+/**
+ * Lazy loading utility for images
+ */
+
+class LazyImageLoader {
+    constructor() {
+        this.imageObserver = null;
+        this.init();
+    }
+
+    init() {
+        // Check if IntersectionObserver is supported
+        if ('IntersectionObserver' in window) {
+            this.imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        this.loadImage(img);
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                // Load images when they're 100px away from viewport
+                rootMargin: '100px 0px',
+                threshold: 0.01
+            });
+        }
+    }
+
+    loadImage(img) {
+        // Get the actual src from data-src
+        const src = img.getAttribute('data-src');
+        if (!src) return;
+
+        // Create a new image to preload
+        const imageLoader = new Image();
+        
+        imageLoader.onload = () => {
+            // Image loaded successfully, update src and remove lazy class
+            img.src = src;
+            img.classList.remove('lazy-loading');
+            img.classList.add('lazy-loaded');
+            
+            // Remove data-src attribute
+            img.removeAttribute('data-src');
+        };
+
+        imageLoader.onerror = () => {
+            // Handle image load error
+            img.classList.remove('lazy-loading');
+            img.classList.add('lazy-error');
+        };
+
+        // Start loading the image
+        imageLoader.src = src;
+    }
+
+    observe(img) {
+        if (this.imageObserver) {
+            this.imageObserver.observe(img);
+        } else {
+            // Fallback for browsers without IntersectionObserver
+            this.loadImage(img);
+        }
+    }
+
+    observeAll() {
+        // Find all images with data-src attribute
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        lazyImages.forEach(img => this.observe(img));
+    }
+
+    // Method to reinitialize after dynamic content changes
+    refresh() {
+        this.observeAll();
+    }
+}
+
+// Create singleton instance
+const lazyLoader = new LazyImageLoader();
+
+/* harmony default export */ const lazyLoading = (lazyLoader);
 ;// ./src/app/index.js
+
 
 
 
@@ -833,11 +917,25 @@ async function render() {
         ).default,
         path
     );
+
+    // Reinitialize lazy loading after content change
+    setTimeout(() => lazyLoading.refresh(), 100);
 }
 
 replacePath()
     .then(() => render())
-    .then(() => (0,localeHandler/* default */.A)());
+    .then(() => (0,localeHandler/* default */.A)())
+    .then(() => {
+        // Initialize lazy loading after content is rendered
+        setTimeout(() => lazyLoading.observeAll(), 100);
+        
+        // Listen for navigation events and reinitialize lazy loading
+        window.addEventListener('popstate', () => {
+            render().then(() => {
+                setTimeout(() => lazyLoading.refresh(), 100);
+            });
+        });
+    });
 
 })();
 
