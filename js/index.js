@@ -819,17 +819,33 @@ var localeHandler = __webpack_require__(788);
     }
 });
 ;// ./src/app/helpers/lazyLoading.js
-// Lightweight lazy loading utility
+// Enhanced lazy loading with better skeleton handling
 const loadImage = (img) => {
     const src = img.dataset.src;
     if (!src) return;
     
-    img.onload = () => {
-        img.classList.remove('lazy-loading');
-        img.classList.add('lazy-loaded');
-        delete img.dataset.src;
+    // Create a new image to preload
+    const tempImg = new Image();
+    
+    tempImg.onload = () => {
+        // Smooth transition from skeleton to actual image
+        img.src = src;
+        
+        // Small delay to ensure image is rendered
+        setTimeout(() => {
+            img.classList.remove('lazy-loading');
+            img.classList.add('lazy-loaded');
+            delete img.dataset.src;
+        }, 100);
     };
-    img.src = src;
+    
+    tempImg.onerror = () => {
+        img.classList.remove('lazy-loading');
+        img.classList.add('lazy-error');
+    };
+    
+    // Start loading
+    tempImg.src = src;
 };
 
 const observer = window.IntersectionObserver ? new IntersectionObserver((entries, obs) => {
