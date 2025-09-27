@@ -1,0 +1,132 @@
+{
+    "header": {
+        "home": "startseite",
+        "projects": "projekte",
+        "about": "über-mich",
+        "blog": "blog",
+        "contacts": "kontakte"
+    },
+    "footer": {
+        "description": "Datentechnik-Enthusiast aus Indien.",
+        "copyright": "2025.ranjan",
+        "media": "Medien"
+    },
+    "tags": {
+        "title": "Tags",
+        "subtitle": "Beiträge nach Tags durchsuchen"
+    },
+    "skills": {
+        "language": "Sprachen",
+        "bigdata": "Big Data & Streaming",
+        "database": "Datenbanken & Warehouses",
+        "cloud": "Cloud-Plattformen",
+        "tool": "Tools & Orchestrierung",
+        "visualization": "Datenvisualisierung"
+    },
+    "projects": {
+        "realtime-booking-cdc": {
+            "name": "Echtzeit-Buchungsereignis-Ingestion über Azure CDC",
+            "description": "Entwarf und implementierte eine Azure Data Factory Pipeline zum Lesen von CDC-Ereignissen aus CosmosDB und Kundendaten aus ADLS. Führte SCD-1 auf Kundendaten durch und fügte transformierte Buchungsereignisse in Azure Synapse DWH für Analysen ein."
+        },
+        "fintech-datalake": {
+            "name": "FinTech Datalake Migration & Medallion Architektur (Azure)",
+            "description": "Entwickelte eine dynamische Azure Synapse Pipeline zur Migration historischer Daten von SQL DB zu ADLS (Bronze). Verwendete PySpark Notebooks für Transformationen und implementierte die Medallion Architektur (Bronze → Silber → Gold) mit Delta Tables."
+        },
+        "lowlatency-upi": {
+            "name": "Niedriglatenz UPI Settlement-Verarbeitung mit Spark Streaming",
+            "description": "Baute einen Echtzeit-Datenfluss mit Spark Structured Streaming auf, um CDC-Feeds aus einer Quell-Delta-Tabelle zu verarbeiten. Angewandte rollende Aggregationen und verwendete die MERGE-Operation zur Aktualisierung einer Ziel-Delta-Tabelle, um niedriglatente Daten für Händlerzahlungsabwicklungen zu gewährleisten."
+        },
+        "scd2-customer-quality": {
+            "name": "SCD-2 Kundenhistorie und Datenqualitäts-Pipeline (Databricks)",
+            "description": "Erstellte eine Ingestion-Pipeline mit PySpark und Databricks Workflows. Erzwang Datenqualitätsprüfungen auf eingehende Daten mit der PyDeequ-Bibliothek und führte eine SCD-2-Zusammenführung in der Kundendimensionstabelle durch, um eine historische Aufzeichnung aller Änderungen zu führen."
+        },
+        "automated-healthcare-dlt": {
+            "name": "Automatisierte Healthcare DLT Pipeline & Lineage Tracking",
+            "description": "Implementierte eine zuverlässige und automatisierte ETL-Pipeline mit Delta Live Tables (DLT). Nutzte deklarative SQL und Python-Logik zur automatischen Erstellung und Verwaltung der Bronze-, Silber- und Gold-Schichten der Medallion-Architektur mit eingebauter Datenqualität und Lineage-Visualisierung."
+        },
+        "azure-stream-analytics": {
+            "name": "Azure Stream Analytics für Echtzeit-Ticketverkauf & Zahlungen",
+            "description": "Richtete Azure Event Hub ein, um Mock-Stream-Daten für Buchungen und Zahlungen zu erfassen. Verwendete Azure Stream Analytics Job zur Durchführung von Echtzeit-Datentransformationen und fensterbasierte Join-Operationen vor dem Schreiben der verarbeiteten Daten in eine Synapse-Tabelle."
+        },
+        "event-driven-order": {
+            "name": "Ereignisgesteuerte Bestellverfolgung Pipeline mit SCD-1 & Archivierung",
+            "description": "Entwickelte eine ereignisgesteuerte Ingestion-Lösung, die durch Dateiankunft in Google Storage ausgelöst wird. Verwendete Databricks Workflows zum Laden von Daten in eine Staging-Delta-Tabelle, führte eine SCD-1-Zusammenführung in die Zieltabelle durch und archivierte die Quelldatei bei erfolgreichem Laden."
+        },
+        "adf-cicd-deployment": {
+            "name": "ADF Pipeline CI/CD Deployment mit Azure DevOps",
+            "description": "Etablierte einen vollständigen CI/CD-Prozess mit Azure DevOps. Automatisierte die Build- und Release-Pipelines für die Bereitstellung von Azure Data Factory Artefakten und ARM-Templates von einer Entwicklungs- in eine Produktionsumgebung."
+        }
+    },
+    "pages": {
+        "home": {
+            "hero": {
+                "title": "Ranjan ist ein <span>Dateningenieur</span> und <span>Plattform</span>-Entwickler",
+                "description": "Er entwirft cloud-native Datensysteme, die Leistung und Einblicke fördern",
+                "button": "Kontaktiere MICH",
+                "status": "Offen für neue Möglichkeiten"
+            },
+            "quote": {
+                "text": "Wir brauchen andere, um wir selbst zu werden",
+                "author": "Aadyot"
+            },
+            "projects": {
+                "title": "projekte",
+                "button": "Alle anzeigen"
+            },
+            "skills": {
+                "title": "fähigkeiten"
+            },
+            "about": {
+                "title": "über",
+                "description": [
+                    "Ich bin ein autodidaktischer Dateningenieur mit einer Leidenschaft für die Entwicklung skalierbarer Systeme und zuverlässiger Datenpipelines. Ich genieße es, rohe Informationen durch effiziente Workflows und cloud-native Lösungen in aussagekräftige Einblicke zu verwandeln.",
+                    "Das Erforschen neuer Ansätze, das Verfeinern von Prozessen und das Lösen komplexer Herausforderungen hält mich inspiriert. Ich strebe danach, technische Präzision mit Kreativität zu verbinden und lerne und entwickle mich immer weiter, während die Datenlandschaft wächst."
+                ],
+                "button": "Alle anzeigen"
+            },
+            "contacts": {
+                "title": "kontakte",
+                "text": "Ich bin an Freelance-Möglichkeiten interessiert. Wenn Sie jedoch andere Anfragen oder Fragen haben, zögern Sie nicht, mich zu kontaktieren",
+                "media": "Schreiben Sie mir hier",
+                "donate": "Spenden Sie mir hier"
+            }
+        },
+        "projects": {
+            "description": "Alle meine Projekte",
+            "decent": "anständig",
+            "major": "groß",
+            "small": "klein",
+            "inProgress": "unvollendet"
+        },
+        "about": {
+            "description": "Wer bin ich",
+            "about": {
+                "description": [
+                    "Ich bin ein autodidaktischer Dateningenieur mit einer Leidenschaft für den Aufbau skalierbarer Systeme, die rohe Daten in umsetzbare Erkenntnisse verwandeln.",
+                    "Über die Jahre habe ich Datenpipelines und cloud-native Lösungen entworfen und entwickelt, dabei Kreativität mit technischer Präzision verbunden, um reale Probleme zu lösen.",
+                    "Neugier treibt mich an — ich erforsche immer neue Technologien, Frameworks und bessere Wege, Datenflüsse intelligenter zu gestalten."
+                ]
+            },
+            "skills": {
+                "title": "fähigkeiten"
+            },
+            "facts": {
+                "title": "lustige-fakten",
+                "list": [
+                    "Abendspaziergänge auf ruhigen Straßen sind meine Art der Therapie", 
+                    "Food-Blogs sind mein Mittel, wenn ich einen Stimmungsaufheller brauche",
+                    "Ich kann Pyaasa (1957) immer wieder anschauen und werde nie gelangweilt",
+                    "Fester Glaube, dass Karma immer die Punktzahl behält"
+                ]
+            }
+        },
+        "blog": {
+            "description": "Meine Gedanken und Erkenntnisse",
+            "title": "Blog",
+            "coming_soon": "Blog kommt bald! Bleiben Sie dran für Einblicke in Datentechnik, Technologie und meine Lernreise."
+        },
+        "contacts": {
+            "description": "Wie Sie mich kontaktieren können"
+        }
+    }
+}

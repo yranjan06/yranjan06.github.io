@@ -1,0 +1,17 @@
+<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer L-shaped path -->
+  <path d="M 1 50 L 1 1 L 51 1 L 51 25 L 38 25 L 38 12 L 13 12 L 13 51 L 1 51" 
+        fill="white" 
+        stroke="white" 
+        stroke-width="1" 
+        stroke-linejoin="round" 
+        stroke-linecap="round"/>
+  
+  <!-- Inner rectangular path -->
+  <path d="M 21 25 L 34 25 L 34 38 L 51 38 L 51 51 L 21 51 Z" 
+        fill="none" 
+        stroke="white" 
+        stroke-width="1" 
+        stroke-linejoin="round" 
+        stroke-linecap="round"/>
+</svg>
