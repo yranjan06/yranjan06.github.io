@@ -12,7 +12,7 @@ export default (t) => {
 
                 <a href="/about-me" class="button">${t.button} -></a>
             </div>
-            <img src="/images/about-me-original.webp" alt="" class="about__image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="/images/about-me-original.webp" alt="About Ranjan" class="lazy-loading about__image" loading="lazy">
         </section>
     `;
 };

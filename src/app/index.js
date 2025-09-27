@@ -4,6 +4,7 @@ import startTitleAnimation from "./helpers/startTitleAnimation";
 import localeHandler from "./helpers/localeHandler";
 import loadCssFile from "./helpers/loadCssFile";
 import replacePath from "./helpers/replacePath";
+import lazyLoader from "./helpers/lazyLoading";
 
 import "styles/styles.sass";
 
@@ -15,13 +16,18 @@ async function render() {
     startTitleAnimation(path.name);
 
     document.getElementById(rootId).innerHTML = await Layout(
-        (
-            await import(`./views/${path.element}`)
-        ).default,
+        (await import(`./views/${path.element}`)).default,
         path
     );
+
+    // Reinitialize lazy loading after content change
+    setTimeout(lazyLoader.refresh, 100);
 }
 
 replacePath()
-    .then(() => render())
-    .then(() => localeHandler());
+    .then(render)
+    .then(localeHandler)
+    .then(() => {
+        setTimeout(lazyLoader.observeAll, 100);
+        window.addEventListener('popstate', () => render().then(() => setTimeout(lazyLoader.refresh, 100)));
+    });

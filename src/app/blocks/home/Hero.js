@@ -9,8 +9,8 @@ export default (t) => {
                 <a class="button button__primary" href="#contacts">${t.button} =></a>
             </div>
             <div class="hero__illustrations">
-                <img src="/images/logo-outline.svg" alt="" class="hero__logo">
-                <img src="/images/hero.webp" alt="Ranjan" class="hero__image">
+                <img src="/images/logo-outline.svg" alt="Logo" class="hero__logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="/images/hero.webp" alt="Ranjan" class="lazy-loading hero__image" loading="lazy">
                 <div class="hero__status">${t.status}</div>
                 ${Dots({})}
             </div>
