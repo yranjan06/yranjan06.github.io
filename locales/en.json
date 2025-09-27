@@ -1,0 +1,132 @@
+{
+    "header": {
+        "home": "home",
+        "projects": "projects",
+        "about": "about-me",
+        "blog": "blog",
+        "contacts": "contacts"
+    },
+    "footer": {
+        "description": "Data engineering enthusiast from India.",
+        "copyright": "2025.ranjan",
+        "media": "Media"
+    },
+    "tags": {
+        "title": "Tags",
+        "subtitle": "Browse posts by tags"
+    },
+    "skills": {
+    "language": "Languages",
+    "bigdata": "Big Data & Streaming",
+    "database": "Databases & Warehouses",
+    "cloud": "Cloud Platforms",
+    "tool": "Tools & Orchestration",
+    "visualization": "Data Visualization"
+    },
+    "projects": {
+        "realtime-booking-cdc": {
+            "name": "Real-Time Booking Event Ingestion via Azure CDC",
+            "description": "Designed and implemented an Azure Data Factory pipeline to read CDC events from CosmosDB and customer data from ADLS. Performed SCD-1 on customer data and upserted transformed booking events into Azure Synapse DWH for analytics."
+        },
+        "fintech-datalake": {
+            "name": "FinTech Datalake Migration & Medallion Architecture (Azure)",
+            "description": "Developed a dynamic Azure Synapse pipeline to migrate historical data from SQL DB to ADLS (Bronze). Used PySpark notebooks for transformation and implemented the Medallion Architecture (Bronze → Silver → Gold) using Delta Tables."
+        },
+        "lowlatency-upi": {
+            "name": "Low-Latency UPI Settlement Processing with Spark Streaming",
+            "description": "Built a real-time data flow using Spark Structured Streaming to consume CDC feeds from a source Delta table. Applied rolling aggregations and used the MERGE operation to update a target Delta table, ensuring low-latency data for merchant payment settlements."
+        },
+        "scd2-customer-quality": {
+            "name": "SCD-2 Customer History and Data Quality Pipeline (Databricks)",
+            "description": "Created an ingestion pipeline using PySpark and Databricks Workflows. Enforced data quality checks on incoming data using the PyDeequ library, and performed an SCD-2 merge on the customer dimension table to maintain a historical record of all changes."
+        },
+        "automated-healthcare-dlt": {
+            "name": "Automated Healthcare DLT Pipeline & Lineage Tracking",
+            "description": "Implemented a reliable and automated ETL pipeline using Delta Live Tables (DLT). Utilized declarative SQL and Python logic to automatically create and manage the Bronze, Silver, and Gold layers of the Medallion Architecture with built-in data quality and lineage visualization."
+        },
+        "azure-stream-analytics": {
+            "name": "Azure Stream Analytics for Real-Time Ticket Sales & Payments",
+            "description": "Set up Azure Event Hub to ingest mock stream data for bookings and payments. Used Azure Stream Analytics Job to perform real-time data transformations and window-based join operations before writing the processed data to a Synapse table."
+        },
+        "event-driven-order": {
+            "name": "Event-Driven Order Tracking Pipeline with SCD-1 & Archival",
+            "description": "Developed an event-driven ingestion solution triggered by file arrival in Google Storage. Used Databricks Workflows to load data into a staging Delta table, perform an SCD-1 merge into the target table, and archive the source file upon successful load."
+        },
+        "adf-cicd-deployment": {
+            "name": "ADF Pipeline CI/CD Deployment using Azure DevOps",
+            "description": "Established a complete CI/CD process using Azure DevOps. Automated the build and release pipelines for deploying Azure Data Factory artifacts and ARM templates from a development environment to a production environment."
+        }
+    },
+    "pages": {
+        "home": {
+            "hero": {
+                "title": "Ranjan is a <span>data engineer</span> and <span>platform</span> developer",
+                "description": "He designs cloud-native data systems that drive performance and insight",
+                "button": "Contact ME",
+                "status": "Open for new opportunities"
+            },
+            "quote": {
+                "text": "We need others to become ourselves",
+                "author": "Aadyot"
+            },
+            "projects": {
+                "title": "projects",
+                "button": "View all"
+            },
+            "skills": {
+                "title": "skills"
+            },
+            "about": {
+                "title": "about",
+                "description": [
+                    "I’m a self-taught data engineer passionate about designing scalable systems and reliable data pipelines. I enjoy shaping raw information into meaningful insights through efficient workflows and cloud-native solutions.",
+    "Exploring new approaches, refining processes, and solving complex challenges keeps me inspired. I aim to combine technical precision with creativity, always learning and evolving as the data landscape grows."
+                ],
+                "button": "View all"
+            },
+            "contacts": {
+                "title": "contacts",
+                "text": "I’m interested in freelance opportunities. However, if you have other request or question, don’t hesitate to contact me",
+                "media": "Message me here",
+                "donate": "Donate me here"
+            }
+        },
+        "projects": {
+            "description": "All of my projects",
+            "decent": "decent", 
+            "major": "major",
+            "small": "small",
+            "inProgress": "unfinished"
+        },
+        "about": {
+            "description": "Who am i",
+            "about": {
+                "description": [
+                    "I’m a self-taught data engineer with a passion for building scalable systems that transform raw data into actionable insights.",
+                    "Over the years, I’ve designed and developed data pipelines and cloud-native solutions, blending creativity with technical precision to solve real-world problems.",
+                    "Curiosity drives me — I’m always exploring emerging technologies, frameworks, and better ways to make data flow smarter."
+                ]
+            },
+            "skills": {
+                "title": "skills"
+            },
+            "facts": {
+                "title": "fun-facts",
+                "list": [
+                    "Evening walks on quiet streets are my kind of therapy", 
+                    "Food blogs are my go-to when I need a mood booster",
+                    "I can rewatch Pyaasa (1957) and never get bored",
+                    "Firm believer that Karma always keeps the score"
+                ]
+            }
+        },
+        "blog": {
+            "description": "My thoughts and insights",
+            "title": "Blog",
+            "coming_soon": "Blog coming soon! Stay tuned for insights on data engineering, technology, and my learning journey."
+        },
+        "contacts": {
+            "description": "How to contact me"
+        }
+    }
+}
