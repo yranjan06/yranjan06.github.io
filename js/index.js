@@ -126,7 +126,7 @@ const paths = ["/", "/projects", "/about-me", "/blog"]
 
                         <div class="dropdown__list">
                             <div class="dropdown__option">de</div>
-                            <div class="dropdown__option">bh</div>
+                            <div class="dropdown__option">𑂦𑂷𑂔</div>
                         </div>
                     </div>
 
@@ -236,7 +236,12 @@ function setLocaleHander() {
 }
 
 async function getLocale() {
-    const locale = localStorage.locale ?? defaultLocale
+    let locale = localStorage.locale ?? defaultLocale
+    
+    // Map Bhojpuri script to file name
+    if (locale === "𑂦𑂷𑂔") {
+        locale = "bh"
+    }
 
     return fetch(`/locales/${locale}.json`).then(res => res.json())
 }
