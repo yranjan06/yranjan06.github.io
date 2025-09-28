@@ -154,7 +154,7 @@ export default (t) => {
                         <h3 class="blog-toc__title">Table of Contents</h3>
                         <nav class="blog-toc__nav">
                             ${headings.map(heading => `
-                                <a href="#${heading.id}" class="blog-toc__link blog-toc__link--level-${heading.level}" onclick="document.getElementById('${heading.id}').scrollIntoView({behavior: 'smooth'});">
+                                <a href="#${heading.id}" class="blog-toc__link blog-toc__link--level-${heading.level}" onclick="event.preventDefault(); document.getElementById('${heading.id}')?.scrollIntoView({behavior: 'smooth', block: 'start'});">
                                     ${heading.text}
                                 </a>
                             `).join('')}
