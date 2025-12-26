@@ -9,7 +9,55 @@ export const blogPosts = [
         slug: "azure-virtual-machine",
         readTime: 5,
         content: `
-            <h3>What is an Azure Virtual Machine?</h3>
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                <h3 style="margin: 0;">What is an Azure Virtual Machine?</h3>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <audio id="azure-audio-1" style="display: none;" 
+                           ontimeupdate="document.getElementById('audio-progress-1').style.width = ((this.currentTime / this.duration) * 100) + '%';"
+                           onplay="document.getElementById('logo-btn-1').style.opacity='1'; document.getElementById('wave-1').style.display='flex'; document.querySelectorAll('#logo-btn-1 path').forEach(p => p.style.color='hsl(354.4, 81.96%, 55.66%)');"
+                           onpause="document.getElementById('logo-btn-1').style.opacity='0.5'; document.getElementById('wave-1').style.display='none'; document.querySelectorAll('#logo-btn-1 path').forEach(p => p.style.color='hsl(219, 14%, 71%)');"
+                           onended="document.getElementById('logo-btn-1').style.opacity='0.5'; document.getElementById('wave-1').style.display='none'; document.getElementById('audio-progress-1').style.width='0%'; document.querySelectorAll('#logo-btn-1 path').forEach(p => p.style.color='hsl(219, 14%, 71%)');">
+                        <source src="images/BlogAudio/Azure01/Azure.m4a" type="audio/mp4">
+                    </audio>
+                    <button id="logo-btn-1" onclick="document.getElementById('azure-audio-1').paused ? document.getElementById('azure-audio-1').play() : document.getElementById('azure-audio-1').pause()" 
+                            style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid hsl(219, 14%, 71%); background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; padding: 8px; flex-shrink: 0; opacity: 0.5;"
+                            onmouseover="this.style.background='hsl(219, 14%, 71%, 0.1)'; this.style.borderColor='hsl(0, 0%, 100%)';"
+                            onmouseout="this.style.background='transparent'; this.style.borderColor='hsl(219, 14%, 71%)';">
+                        <svg width="24" height="24" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 1 50 L 1 1 L 51 1 L 51 25 L 38 25 L 38 12 L 13 12 L 13 51 L 1 51" 
+                                  fill="currentColor" 
+                                  stroke="currentColor" 
+                                  stroke-width="1" 
+                                  stroke-linejoin="round" 
+                                  stroke-linecap="round"
+                                  style="color: hsl(219, 14%, 71%); transition: color 0.3s ease;"/>
+                            <path d="M 21 25 L 34 25 L 34 38 L 51 38 L 51 51 L 21 51 Z" 
+                                  fill="currentColor" 
+                                  stroke="currentColor" 
+                                  stroke-width="1" 
+                                  stroke-linejoin="round" 
+                                  stroke-linecap="round"
+                                  style="color: hsl(219, 14%, 71%); transition: color 0.3s ease;"/>
+                        </svg>
+                    </button>
+                    <div id="wave-1" style="display: none; align-items: center; gap: 3px; height: 40px;">
+                        <div style="width: 3px; height: 12px; background: hsl(219, 14%, 71%); animation: wave 0.6s ease-in-out infinite; animation-delay: 0s;"></div>
+                        <div style="width: 3px; height: 20px; background: hsl(219, 14%, 71%); animation: wave 0.6s ease-in-out infinite; animation-delay: 0.1s;"></div>
+                        <div style="width: 3px; height: 16px; background: hsl(219, 14%, 71%); animation: wave 0.6s ease-in-out infinite; animation-delay: 0.2s;"></div>
+                        <div style="width: 3px; height: 24px; background: hsl(219, 14%, 71%); animation: wave 0.6s ease-in-out infinite; animation-delay: 0.3s;"></div>
+                        <div style="width: 3px; height: 14px; background: hsl(219, 14%, 71%); animation: wave 0.6s ease-in-out infinite; animation-delay: 0.4s;"></div>
+                    </div>
+                    <div style="width: 150px; height: 4px; background: hsl(219, 14%, 71%, 0.2); border-radius: 2px; overflow: hidden; position: relative;">
+                        <div id="audio-progress-1" style="width: 0%; height: 100%; background: hsl(219, 14%, 71%); transition: width 0.1s linear;"></div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @keyframes wave {
+                    0%, 100% { height: 12px; }
+                    50% { height: 28px; }
+                }
+            </style>
             <p>An Azure Virtual Machine (VM) is essentially a computer that exists inside Microsoft's cloud data centers instead of sitting physically on your desk. To understand this easily, imagine that instead of buying a laptop or server, you are renting a powerful computer from Microsoft. You can turn it on, turn it off, install software on it, and work on it exactly like your own system, but you access it through the internet.</p>
             
             <h3>How Does It Work?</h3>
