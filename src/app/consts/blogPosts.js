@@ -47,8 +47,10 @@ export const blogPosts = [
                         <div style="width: 3px; height: 24px; background: hsl(219, 14%, 71%); animation: wave 0.6s ease-in-out infinite; animation-delay: 0.3s;"></div>
                         <div style="width: 3px; height: 14px; background: hsl(219, 14%, 71%); animation: wave 0.6s ease-in-out infinite; animation-delay: 0.4s;"></div>
                     </div>
-                    <div class="audio-progress-bar" style="width: 150px; height: 4px; background: hsl(219, 14%, 71%, 0.2); border-radius: 2px; overflow: hidden; position: relative;">
-                        <div id="audio-progress-1" style="width: 0%; height: 100%; background: hsl(219, 14%, 71%); transition: width 0.1s linear;"></div>
+                    <div class="audio-progress-bar" 
+                         onclick="const rect = this.getBoundingClientRect(); const percent = (event.clientX - rect.left) / rect.width; const audio = document.getElementById('azure-audio-1'); audio.currentTime = percent * audio.duration;"
+                         style="width: 150px; height: 4px; background: hsl(219, 14%, 71%, 0.2); border-radius: 2px; overflow: hidden; position: relative; cursor: pointer;">
+                        <div id="audio-progress-1" style="width: 0%; height: 100%; background: hsl(219, 14%, 71%); transition: width 0.1s linear; pointer-events: none;"></div>
                     </div>
                 </div>
             </div>
