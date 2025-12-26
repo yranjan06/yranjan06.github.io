@@ -122,6 +122,15 @@ export const blogPosts = [
             <div class="blog-post__image">
                 <img src="images/Blog/Your paragraph text.webp" alt="Azure VM creation process" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
             </div>
+            
+            <h3>Project Details: Subscription and Resource Group</h3>
+            <p>The first configuration step involves selecting a <strong>Subscription</strong> and a <strong>Resource Group</strong>. A subscription defines who pays the bill for your Azure resources. If you have multiple Azure accounts or free credits, the subscription determines which account will be charged for the resources you create.</p>
+            <p>A Resource Group can be understood as a logical container or folder where you organize related resources. All resources associated with a single project—such as Virtual Machines, storage disks, IP addresses, and virtual networks—are stored inside one resource group. This organizational structure makes it easier to manage, monitor, and control costs for your entire project.</p>
+            <p>One significant advantage of using resource groups is simplified cleanup. When you delete a resource group, all resources contained within it are automatically deleted as well. This prevents orphaned resources that could continue incurring charges.</p>
+            
+            <div class="blog-post__image">
+                <img src="images/Blog/Subscription.webp" alt="Azure Subscription and Resource Group configuration" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+            </div>
         `
     },
     {
