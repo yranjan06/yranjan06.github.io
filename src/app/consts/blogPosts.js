@@ -1,6 +1,30 @@
 export const blogPosts = [
     {
         id: 1,
+        title: "Azure Virtual Machine",
+        date: "2024-12-26",
+        categories: ["Cloud Computing", "Azure"],
+        tags: ["azure", "virtual-machine", "cloud", "microsoft"],
+        excerpt: "An Azure Virtual Machine (VM) is essentially a computer that exists inside Microsoft's cloud data centers instead of sitting physically on your desk. Learn how Azure VMs provide flexible, scalable computing resources that you can access through the internet with full control over the operating system and resources.",
+        slug: "azure-virtual-machine",
+        readTime: 5,
+        content: `
+            <h3>What is an Azure Virtual Machine?</h3>
+            <p>An Azure Virtual Machine (VM) is essentially a computer that exists inside Microsoft's cloud data centers instead of sitting physically on your desk. To understand this easily, imagine that instead of buying a laptop or server, you are renting a powerful computer from Microsoft. You can turn it on, turn it off, install software on it, and work on it exactly like your own system, but you access it through the internet.</p>
+            
+            <h3>How Does It Work?</h3>
+            <p>This virtual computer is not imaginary or fake. It is a real physical machine running in a Microsoft data center somewhere in the world. The only difference is that you do not see or touch it physically. Azure manages the hardware, electricity, cooling, and security, while you focus only on using the computer.</p>
+            
+            <h3>Full Control and Flexibility</h3>
+            <p>With an Azure VM, you get full control. You decide which Operating System you want to run, such as Windows Server or Ubuntu Linux. You also choose how much RAM, how many CPU cores, and how much storage the machine should have. This flexibility makes Azure Virtual Machines extremely powerful for developers, students, startups, and enterprises.</p>
+            
+            <div class="blog-post__image">
+                <img src="images/Blog/ghar-to-datacenter.webp" alt="Azure VM connection from home to data center" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+            </div>
+        `
+    },
+    {
+        id: 2,
         title: "Project, Kafka Consumption Group and Topic Relationship",
         date: "2024-09-22",
         categories: ["Apache Kafka", "Big Data"],
@@ -26,7 +50,7 @@ export const blogPosts = [
         `
     },
     {
-        id: 2,
+        id: 3,
         title: "Vector Search with Faiss: A Practical Guide",
         date: "2024-01-07",
         categories: ["Deep Learning", "NLP"],
@@ -76,7 +100,7 @@ D, I = index.search(xq, k)</code></pre>
         `
     },
     {
-        id: 3,
+        id: 4,
         title: "Building Scalable Data Pipelines with Apache Airflow",
         date: "2024-08-15",
         categories: ["Data Pipelines", "ETL"],
