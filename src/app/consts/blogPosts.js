@@ -9,9 +9,9 @@ export const blogPosts = [
         slug: "azure-virtual-machine",
         readTime: 5,
         content: `
-            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                <h3 style="margin: 0;">What is an Azure Virtual Machine?</h3>
-                <div style="display: flex; align-items: center; gap: 10px;">
+            <div class="audio-header-container" style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; flex-wrap: wrap;">
+                <h3 style="margin: 0; flex: 1; min-width: 200px;">What is an Azure Virtual Machine?</h3>
+                <div class="audio-controls" style="display: flex; align-items: center; gap: 10px; flex-wrap: nowrap;">
                     <audio id="azure-audio-1" style="display: none;" 
                            ontimeupdate="document.getElementById('audio-progress-1').style.width = ((this.currentTime / this.duration) * 100) + '%';"
                            onplay="document.getElementById('logo-btn-1').style.opacity='1'; document.getElementById('wave-1').style.display='flex'; document.querySelectorAll('#logo-btn-1 path').forEach(p => p.style.color='hsl(354.4, 81.96%, 55.66%)');"
@@ -47,7 +47,7 @@ export const blogPosts = [
                         <div style="width: 3px; height: 24px; background: hsl(219, 14%, 71%); animation: wave 0.6s ease-in-out infinite; animation-delay: 0.3s;"></div>
                         <div style="width: 3px; height: 14px; background: hsl(219, 14%, 71%); animation: wave 0.6s ease-in-out infinite; animation-delay: 0.4s;"></div>
                     </div>
-                    <div style="width: 150px; height: 4px; background: hsl(219, 14%, 71%, 0.2); border-radius: 2px; overflow: hidden; position: relative;">
+                    <div class="audio-progress-bar" style="width: 150px; height: 4px; background: hsl(219, 14%, 71%, 0.2); border-radius: 2px; overflow: hidden; position: relative;">
                         <div id="audio-progress-1" style="width: 0%; height: 100%; background: hsl(219, 14%, 71%); transition: width 0.1s linear;"></div>
                     </div>
                 </div>
@@ -56,6 +56,49 @@ export const blogPosts = [
                 @keyframes wave {
                     0%, 100% { height: 12px; }
                     50% { height: 28px; }
+                }
+                
+                @media (max-width: 768px) {
+                    .audio-header-container {
+                        flex-direction: column !important;
+                        align-items: flex-start !important;
+                        gap: 10px !important;
+                    }
+                    
+                    .audio-header-container h3 {
+                        width: 100%;
+                    }
+                    
+                    .audio-controls {
+                        width: 100%;
+                        justify-content: flex-start !important;
+                    }
+                    
+                    .audio-progress-bar {
+                        flex: 1;
+                        min-width: 100px !important;
+                        max-width: 100% !important;
+                        width: auto !important;
+                    }
+                }
+                
+                @media (max-width: 500px) {
+                    .audio-header-container {
+                        gap: 8px !important;
+                    }
+                    
+                    .audio-controls {
+                        gap: 8px !important;
+                    }
+                    
+                    #logo-btn-1 {
+                        width: 36px !important;
+                        height: 36px !important;
+                    }
+                    
+                    #wave-1 {
+                        height: 36px !important;
+                    }
                 }
             </style>
             <p>An Azure Virtual Machine (VM) is essentially a computer that exists inside Microsoft's cloud data centers instead of sitting physically on your desk. To understand this easily, imagine that instead of buying a laptop or server, you are renting a powerful computer from Microsoft. You can turn it on, turn it off, install software on it, and work on it exactly like your own system, but you access it through the internet.</p>
