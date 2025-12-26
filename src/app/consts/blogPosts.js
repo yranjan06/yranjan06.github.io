@@ -114,6 +114,14 @@ export const blogPosts = [
             <div class="blog-post__image">
                 <img src="images/Blog/ghar-to-datacenter.webp" alt="Azure VM connection from home to data center" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
             </div>
+            
+            <h3>How to create VM in Azure ?</h3>
+            <p>To create a Virtual Machine, you first need to log in to the Azure Portal, which is Microsoft's web-based dashboard for managing cloud resources. Once logged in, you click on "Create a Resource" and then select Virtual Machine. From here, Azure guides you through a step-by-step process where you configure your VM.</p>
+            <p>Although the process looks long, it is actually logical and structured. Each step helps Azure understand what kind of machine you want to create.</p>
+            
+            <div class="blog-post__image">
+                <img src="images/Blog/Your paragraph text.webp" alt="Azure VM creation process" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+            </div>
         `
     },
     {
