@@ -267,12 +267,12 @@ var map = {
 		548
 	],
 	"./Blog": [
-		853,
-		853
+		79,
+		79
 	],
 	"./Blog.js": [
-		853,
-		853
+		79,
+		79
 	],
 	"./Categories": [
 		197,
@@ -467,7 +467,7 @@ const media_media = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + {"36":"130392ac016260724303","76":"13a595e634dcd24033d4","197":"c0acafdbe17d3a0178d8","548":"6d36aa9c7084c68c0844","573":"b1ec3c0c28bdeb38dbfc","840":"41c1bf4e0a9da36764a5","847":"3a24db7d86c74b930d79","853":"23973c32b9db70bd6aff","960":"976371b8f53b43fec44c"}[chunkId] + ".js";
+/******/ 			return "js/" + {"36":"130392ac016260724303","76":"13a595e634dcd24033d4","79":"7cf6e9616e7dab548b18","197":"c0acafdbe17d3a0178d8","548":"6d36aa9c7084c68c0844","573":"b1ec3c0c28bdeb38dbfc","840":"41c1bf4e0a9da36764a5","847":"3a24db7d86c74b930d79","960":"976371b8f53b43fec44c"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -477,7 +477,7 @@ const media_media = {
 /******/ 		__webpack_require__.miniCssF = (chunkId) => {
 /******/ 			// return url for filenames not based on template
 /******/ 			if (chunkId === 548) return "css/548.css";
-/******/ 			if (chunkId === 853) return "css/853.css";
+/******/ 			if (chunkId === 79) return "css/79.css";
 /******/ 			if (chunkId === 197) return "css/197.css";
 /******/ 			if (chunkId === 36) return "css/36.css";
 /******/ 			if (chunkId === 847) return "css/847.css";
@@ -651,7 +651,7 @@ const media_media = {
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"36":1,"197":1,"548":1,"840":1,"847":1,"853":1};
+/******/ 			var cssChunks = {"36":1,"79":1,"197":1,"548":1,"840":1,"847":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {
