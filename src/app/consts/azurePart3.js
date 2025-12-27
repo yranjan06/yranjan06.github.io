@@ -48,7 +48,7 @@ export const azurePart3Content = {
         <p>Azure SQL Database offers different service tiers to match various workload requirements:</p>
         
         <div class="blog-post__image">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="images/Blog/azure-sql-tiers.webp" alt="Azure SQL Database Service Tiers" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="/images/Blog/azure-sql-tiers.webp" alt="Azure SQL Database Service Tiers" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
         </div>
         
         <h4>1. DTU-based Model (Database Transaction Units)</h4>
@@ -71,7 +71,7 @@ export const azurePart3Content = {
         <p>Let's walk through the steps to create your first Azure SQL Database:</p>
         
         <div class="blog-post__image">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="images/Blog/azure-sql-create.webp" alt="Azure SQL Database Creation Process" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="/images/Blog/azure-sql-create.webp" alt="Azure SQL Database Creation Process" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
         </div>
         
         <h4>Step 1: Navigate to Azure Portal</h4>
@@ -124,7 +124,7 @@ export const azurePart3Content = {
         <p>Once your database is created, you can connect to it using various tools:</p>
         
         <div class="blog-post__image">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="images/Blog/azure-sql-connect.webp" alt="Connecting to Azure SQL Database" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="/images/Blog/azure-sql-connect.webp" alt="Connecting to Azure SQL Database" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
         </div>
         
         <h4>Using Azure Portal Query Editor</h4>
@@ -155,7 +155,7 @@ Password: your-admin-password</code></pre>
         <p>Azure SQL Database provides rich monitoring capabilities:</p>
         
         <div class="blog-post__image">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="images/Blog/azure-sql-monitoring.webp" alt="Azure SQL Database Monitoring Dashboard" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="/images/Blog/azure-sql-monitoring.webp" alt="Azure SQL Database Monitoring Dashboard" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
         </div>
         
         <ul>
