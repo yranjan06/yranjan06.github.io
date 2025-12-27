@@ -1,4 +1,7 @@
+import { azurePart3Content } from './azurePart3.js';
+
 export const blogPosts = [
+    azurePart3Content,
     {
         id: 1,
         title: "Azure Virtual Machine",
