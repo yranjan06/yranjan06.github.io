@@ -47,6 +47,10 @@ export const azurePart3Content = {
         <h3>Service Tiers and Pricing Models</h3>
         <p>Azure SQL Database offers different service tiers to match various workload requirements:</p>
         
+        <div class="blog-post__image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="images/Blog/azure-sql-tiers.webp" alt="Azure SQL Database Service Tiers" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+        </div>
+        
         <h4>1. DTU-based Model (Database Transaction Units)</h4>
         <p>The DTU model provides a simple, bundled measure of compute, storage, and I/O resources:</p>
         <ul>
@@ -65,6 +69,10 @@ export const azurePart3Content = {
         
         <h3>Creating Your First Azure SQL Database</h3>
         <p>Let's walk through the steps to create your first Azure SQL Database:</p>
+        
+        <div class="blog-post__image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="images/Blog/azure-sql-create.webp" alt="Azure SQL Database Creation Process" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+        </div>
         
         <h4>Step 1: Navigate to Azure Portal</h4>
         <p>Log in to the Azure Portal (portal.azure.com) and click on "Create a resource" from the home page or left navigation menu.</p>
@@ -115,6 +123,10 @@ export const azurePart3Content = {
         <h3>Connecting to Your Database</h3>
         <p>Once your database is created, you can connect to it using various tools:</p>
         
+        <div class="blog-post__image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="images/Blog/azure-sql-connect.webp" alt="Connecting to Azure SQL Database" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+        </div>
+        
         <h4>Using Azure Portal Query Editor</h4>
         <p>The simplest way to run queries is using the built-in Query Editor in the Azure Portal. Navigate to your database and click "Query editor" in the left menu. Enter your credentials and start running SQL queries directly in the browser.</p>
         
@@ -141,6 +153,11 @@ Password: your-admin-password</code></pre>
         
         <h3>Monitoring and Performance</h3>
         <p>Azure SQL Database provides rich monitoring capabilities:</p>
+        
+        <div class="blog-post__image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="images/Blog/azure-sql-monitoring.webp" alt="Azure SQL Database Monitoring Dashboard" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+        </div>
+        
         <ul>
             <li><strong>Query Performance Insight:</strong> Identifies top resource-consuming queries</li>
             <li><strong>Automatic Tuning:</strong> AI-powered recommendations for index creation and query optimization</li>
