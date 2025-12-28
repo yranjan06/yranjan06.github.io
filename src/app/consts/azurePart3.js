@@ -16,6 +16,10 @@ export const azurePart3Content = {
         
         <p>Here's where it gets tricky. All these metrics might show green checkmarks. Your dashboards look great. Your automated tests pass. But then you talk to actual users, and they're frustrated. The AI gives technically correct answers that completely miss what they actually needed. It works according to your measurements but fails in real life. This disconnect between looking good on paper and being useful in practice is one of the biggest problems teams face when building AI applications.</p>
         
+        <div class="blog-post__image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="/images/Blog/LLM/Your_paragraph_text-removebg-preview.webp" alt="LLM Evaluation Challenges" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+        </div>
+        
         <h3>Why Jumping to Automation Too Early Backfires</h3>
         
         <p>Let me share what usually happens. When you rush to build automated evaluation systems, you're making a big assumption. You're assuming you already know what's wrong with your AI system. But here's the thing, in most cases, especially when you're just starting out, that assumption is completely wrong.</p>
