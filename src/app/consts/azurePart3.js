@@ -30,6 +30,10 @@ export const azurePart3Content = {
         
         <p>This is why you'll see teams spending weeks trying to reduce hallucinations when their real problem is that the AI fundamentally misunderstands what users are asking for. Generic labels like "helpfulness" or "relevance" sound thorough, but they're often too vague to tell you what's actually broken. You end up fixing things that don't matter while the big problems keep hurting your users.</p>
         
+        <div class="blog-post__image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="/images/Blog/LLM/kp2.webp" alt="LLM Evaluation Process" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+        </div>
+        
         <h3>Why Manual Analysis Actually Works Better</h3>
         
         <p>I know what you're thinking. Manual analysis sounds basic, maybe even boring. In a world where we can automate almost everything, why would you sit down and read through failures by hand? But here's what I've learned from working on these systems. This "boring" approach is actually the fastest way to make real progress.</p>
