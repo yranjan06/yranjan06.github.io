@@ -824,7 +824,7 @@ var localeHandler = __webpack_require__(788);
     }
 });
 ;// ./src/app/helpers/lazyLoading.js
-// Enhanced lazy loading with better skeleton handling
+// Enhanced lazy loading with better skeleton handling and responsive images
 const loadImage = (img) => {
     const src = img.dataset.src;
     if (!src) return;
@@ -833,15 +833,19 @@ const loadImage = (img) => {
     const tempImg = new Image();
     
     tempImg.onload = () => {
-        // Smooth transition from skeleton to actual image
+        // Set source and srcset if available
         img.src = src;
+        if (img.dataset.srcset) {
+            img.srcset = img.dataset.srcset;
+            delete img.dataset.srcset;
+        }
         
-        // Small delay to ensure image is rendered
+        // Smooth transition from skeleton to actual image
         setTimeout(() => {
             img.classList.remove('lazy-loading');
             img.classList.add('lazy-loaded');
             delete img.dataset.src;
-        }, 100);
+        }, 50);
     };
     
     tempImg.onerror = () => {
@@ -853,6 +857,7 @@ const loadImage = (img) => {
     tempImg.src = src;
 };
 
+// Reduced rootMargin to only load images when closer to viewport (50px instead of 100px)
 const observer = window.IntersectionObserver ? new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -860,7 +865,7 @@ const observer = window.IntersectionObserver ? new IntersectionObserver((entries
             obs.unobserve(entry.target);
         }
     });
-}, { rootMargin: '100px' }) : null;
+}, { rootMargin: '50px' }) : null;
 
 /* harmony default export */ const lazyLoading = ({
     observeAll: () => document.querySelectorAll('img[data-src]').forEach(img => 
