@@ -50,6 +50,10 @@ export const azurePart3Content = {
         
         <p>One important thing though. Don't cherry pick interesting failures. Don't just grab the most recent ones either. You want a realistic mix of the problems your users actually face. If you have user ratings, focus on the low rated interactions. If you track support tickets, include examples from commonly reported issues. You're trying to understand the real distribution of problems, not collect weird edge cases that make for interesting technical discussions.</p>
         
+        <div class="blog-post__image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="/images/Blog/LLM/kp3.webp" alt="Error Analysis Framework" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+        </div>
+        
         <h3>How to Set Up Your Analysis</h3>
         
         <p>The actual analysis is straightforward. Open a spreadsheet. Make one row for each failure. For every example, write down a few things. Give it a simple ID number. Record what the user asked or said. Note what your system responded with. Then comes the important part, labeling what went wrong.</p>
@@ -113,6 +117,10 @@ export const azurePart3Content = {
         <p>This order matters a lot. Manual analysis first, automation second. It ensures you measure things that matter instead of things that are easy to measure. It prevents you from spending time optimizing proxy metrics that don't actually connect to whether users find your system helpful.</p>
         
         <h3>Building AI Systems That Actually Work</h3>
+        
+        <div class="blog-post__image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="/images/Blog/LLM/k4.webp" alt="Building Effective AI Systems" class="lazy-loading" loading="lazy" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);" />
+        </div>
         
         <p>The path to building useful AI applications doesn't start with fancy evaluation infrastructure. It starts with understanding. Before you build dashboards, before you set up AI judges, before you create comprehensive test suites, spend time with manual analysis. Look at real failures. Understand them. Let that understanding drive your decisions.</p>
         
