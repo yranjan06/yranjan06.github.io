@@ -307,6 +307,33 @@ body:has(.blog-layout--full-screen) .media-header
             color: var(--background)
             border-color: var(--gray)
 
+    &__locked-notice
+        display: inline-flex
+        align-items: center
+        border: 2px solid rgba(255, 193, 7, 0.5)
+        color: rgba(255, 193, 7, 0.9)
+        font-weight: 600
+        padding: 0.75rem 1.5rem
+        background: rgba(255, 193, 7, 0.1)
+        font-size: 0.9rem
+        cursor: not-allowed
+        
+        @media (max-width: $mobileScreen)
+            padding: 0.6rem 1.2rem
+            font-size: 0.85rem
+        
+        svg
+            flex-shrink: 0
+
+    &--locked
+        opacity: 0.8
+        
+        .blog-post__title
+            display: flex
+            align-items: center
+            justify-content: center
+            color: rgba(255, 255, 255, 0.8)
+
 
 
 // Full post view styles

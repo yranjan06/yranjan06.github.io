@@ -1,11 +1,13 @@
 import { azurePart3Content } from './azurePart3.js';
+import { llmJudgeAlignmentContent } from './llmJudgeAlignment.js';
 
 export const blogPosts = [
+    llmJudgeAlignmentContent,
     azurePart3Content,
     {
         id: 1,
         title: "Azure Virtual Machine",
-        date: "2024-12-26",
+        date: "2025-10-16",
         categories: ["Cloud Computing", "Azure"],
         tags: ["azure", "virtual-machine", "cloud", "microsoft"],
         excerpt: "An Azure Virtual Machine (VM) is essentially a computer that exists inside Microsoft's cloud data centers instead of sitting physically on your desk. Learn how Azure VMs provide flexible, scalable computing resources that you can access through the internet with full control over the operating system and resources.",

@@ -1,7 +1,7 @@
 export const azurePart3Content = {
     id: 5,
     title: "The Unsexy Secret to Building LLM Apps That Don't Suck",
-    date: "2024-12-28",
+    date: "2025-12-26",
     categories: ["Machine Learning", "AI Engineering", "Software Development"],
     tags: ["llm", "evaluation", "machine-learning", "rag", "ai-systems", "engineering-practices"],
     excerpt: "Discover why the most successful LLM applications start with systematic manual error analysis rather than automated evaluation pipelines. Learn practical strategies for identifying failure patterns, prioritizing improvements, and building evaluation systems that actually improve user experience.",
