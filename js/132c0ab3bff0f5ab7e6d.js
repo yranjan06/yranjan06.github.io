@@ -67,8 +67,8 @@ const gap = 16;
         </figure>
     `
 });
-// EXTERNAL MODULE: ./src/app/components/ProjectList.js + 2 modules
-var ProjectList = __webpack_require__(975);
+// EXTERNAL MODULE: ./src/app/components/ProjectList.js + 1 modules
+var ProjectList = __webpack_require__(340);
 ;// ./src/app/blocks/home/Projects.js
 
 
