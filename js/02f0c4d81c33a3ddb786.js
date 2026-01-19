@@ -1,8 +1,8 @@
 "use strict";
 (self["webpackChunkportfolio"] = self["webpackChunkportfolio"] || []).push([[420],{
 
-/***/ 420:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 420
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
@@ -879,6 +879,6 @@ const getAllTags = () => {
     `;
 });
 
-/***/ })
+/***/ }
 
 }]);

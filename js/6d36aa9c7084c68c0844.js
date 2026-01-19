@@ -1,8 +1,8 @@
 "use strict";
 (self["webpackChunkportfolio"] = self["webpackChunkportfolio"] || []).push([[548],{
 
-/***/ 548:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 548
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
@@ -87,6 +87,6 @@ var skills = __webpack_require__(515);
 });
 
 
-/***/ })
+/***/ }
 
 }]);

@@ -1,8 +1,8 @@
 "use strict";
 (self["webpackChunkportfolio"] = self["webpackChunkportfolio"] || []).push([[36],{
 
-/***/ 36:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 36
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
@@ -204,6 +204,6 @@ const contacts = [
 });
 
 
-/***/ })
+/***/ }
 
 }]);

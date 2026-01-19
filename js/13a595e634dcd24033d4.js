@@ -1,8 +1,8 @@
 "use strict";
 (self["webpackChunkportfolio"] = self["webpackChunkportfolio"] || []).push([[76],{
 
-/***/ 427:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 427
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -29,10 +29,10 @@
 });
 
 
-/***/ }),
+/***/ },
 
-/***/ 515:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 515
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -66,10 +66,10 @@
 });
 
 
-/***/ }),
+/***/ },
 
-/***/ 778:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 778
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -83,10 +83,10 @@
     `
 });
 
-/***/ }),
+/***/ },
 
-/***/ 928:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 928
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -191,10 +191,10 @@
 });
 
 
-/***/ }),
+/***/ },
 
-/***/ 975:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 975
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
 // EXPORTS
@@ -373,6 +373,6 @@ function mapLinks(links) {
 });
 
 
-/***/ })
+/***/ }
 
 }]);

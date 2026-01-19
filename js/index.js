@@ -1,8 +1,8 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 175:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 175
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -16,10 +16,10 @@
     X: "x.com/"  
 });
 
-/***/ }),
+/***/ },
 
-/***/ 669:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 669
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
@@ -158,10 +158,10 @@ var localeHandler = __webpack_require__(788);
 });
 
 
-/***/ }),
+/***/ },
 
-/***/ 739:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 739
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -206,10 +206,10 @@ var localeHandler = __webpack_require__(788);
     // },
 });
 
-/***/ }),
+/***/ },
 
-/***/ 788:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 788
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -250,10 +250,10 @@ async function getLocale() {
 
 
 
-/***/ }),
+/***/ },
 
-/***/ 887:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ 887
+(module, __unused_webpack_exports, __webpack_require__) {
 
 var map = {
 	"./About": [
@@ -353,10 +353,10 @@ webpackAsyncContext.keys = () => (Object.keys(map));
 webpackAsyncContext.id = 887;
 module.exports = webpackAsyncContext;
 
-/***/ }),
+/***/ },
 
-/***/ 934:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 934
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
@@ -405,7 +405,7 @@ const media_media = {
 
 
 
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -524,7 +524,6 @@ const media_media = {
 /******/ 				script = document.createElement('script');
 /******/ 		
 /******/ 				script.charset = 'utf-8';
-/******/ 				script.timeout = 120;
 /******/ 				if (__webpack_require__.nc) {
 /******/ 					script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 				}

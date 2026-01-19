@@ -1,8 +1,8 @@
 "use strict";
 (self["webpackChunkportfolio"] = self["webpackChunkportfolio"] || []).push([[960],{
 
-/***/ 960:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 960
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -17,6 +17,6 @@ __webpack_require__.r(__webpack_exports__);
 });
 
 
-/***/ })
+/***/ }
 
 }]);
