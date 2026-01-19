@@ -26,11 +26,15 @@ export default {
         name: "tags",
         element: "Tags",
     },
+    "/discussions": {
+        name: "discussions",
+        element: "Discussions",
+    },
     "/404": {
         name: "404",
         element: "PageNotFound",
     },
-    
+
     // "/contacts": {
     //     name: "contacts",
     //     element: "Contacts",

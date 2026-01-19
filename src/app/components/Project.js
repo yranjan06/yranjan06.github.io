@@ -3,19 +3,22 @@ import websites from "@/consts/websites";
 import techs from "@/consts/techs";
 import media from "@/consts/media";
 
-function mapLinks(links) {
+function mapLinks(links, projectId) {
     function map(link) {
+        // GitHub button links to internal project detail page
+        if (link === "github") {
+            return /*html*/ `<a href="/projects#${projectId}" class="button">Details =></a>`;
+        }
+
         let href =
-        "https://" + (link === "live" ? "" : websites[link]) + links[link];
+            "https://" + (link === "live" ? "" : websites[link]) + links[link];
 
         if (link === "figma") href = `https://figma.com/community/file/${links[link]}`
-        if (link === "github" && links[link].startsWith("/")) href = media.github + links[link]
-
 
         const className = link === "cached" ? "button__secondary" : "";
         const name = `${link[0].toUpperCase()}${link.slice(1)}`;
 
-        return /*html*/ `<a href="${href}" class="button ${className}">${name} =></a>`;
+        return /*html*/ `<a href="${href}" target="_blank" rel="noopener noreferrer" class="button ${className}">${name} =></a>`;
     }
 
     return Object.keys(links).map(map).join("");
@@ -28,25 +31,24 @@ export default ({ id }, t) => {
 
     return /*html*/ `
         <div class="project">
-            ${
-                hasImage
-                    ? `<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="/images/projects/${id}.webp" alt="${t[id].name}" class="lazy-loading project__image" loading="lazy">`
-                    : ""
-            }
+            ${hasImage
+            ? `<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="/images/projects/${id}.webp" alt="${t[id].name}" class="lazy-loading project__image" loading="lazy">`
+            : ""
+        }
             
             <ul class="project__techs">
                 ${projectTech
-                    .map(
-                        (tech) =>
+            .map(
+                (tech) =>
                             /*html*/ `<li class="project__tech">${techs[tech]}</li>`
-                    )
-                    .join("")}
+            )
+            .join("")}
             </ul> 
 
             <div class="project__content">
                 <div class="project__name">${t[id].name}</div>
                 <div class="project__description">${t[id].description}</div>
-                <div class="project__links">${mapLinks(links)}</div>
+                <div class="project__links">${mapLinks(links, id)}</div>
             </div>
         </div> 
     `;

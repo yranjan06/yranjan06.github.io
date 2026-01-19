@@ -1,0 +1,296 @@
+@use '../default/variables' as *
+
+// Discussion Page Layout
+.discussion-page
+    max-width: $desktopScreen
+    margin: 0 auto
+    padding: 2rem 1rem
+    
+    @media (max-width: $desktopScreen)
+        padding: 1rem
+    
+    @media (max-width: $mobileScreen)
+        padding: 0.5rem
+
+    &__nav
+        margin-bottom: 2rem
+        
+        @media (max-width: $mobileScreen)
+            margin-bottom: 1.5rem
+
+    &__back
+        display: inline-flex
+        align-items: center
+        gap: 0.5rem
+        color: var(--gray)
+        text-decoration: none
+        padding: 0.75rem 1.5rem
+        border: 2px solid var(--gray)
+        font-size: 0.9rem
+        font-weight: 600
+        transition: all 0.3s ease
+        
+        &:hover
+            background: var(--gray)
+            color: var(--background)
+            
+        @media (max-width: $mobileScreen)
+            padding: 0.6rem 1rem
+            font-size: 0.85rem
+
+    &__header
+        display: flex
+        align-items: center
+        gap: 1.5rem
+        margin-bottom: 1.5rem
+        padding-bottom: 1.5rem
+        border-bottom: 2px solid var(--gray-op)
+        
+        @media (max-width: $mobileScreen)
+            gap: 1rem
+            margin-bottom: 1rem
+            padding-bottom: 1rem
+
+    &__icon
+        color: var(--primary)
+        flex-shrink: 0
+
+    &__title
+        h1
+            font-size: 1.75rem
+            font-weight: 600
+            color: var(--white)
+            margin: 0 0 0.25rem 0
+            
+            @media (max-width: $mobileScreen)
+                font-size: 1.5rem
+        
+        span
+            color: var(--gray)
+            font-size: 0.9rem
+
+    &__techs
+        display: flex
+        flex-wrap: wrap
+        gap: 0.5rem
+        margin-bottom: 2rem
+        
+        @media (max-width: $mobileScreen)
+            margin-bottom: 1.5rem
+
+    &__tech
+        background: var(--gray-op)
+        color: var(--gray)
+        padding: 0.4rem 0.8rem
+        font-size: 0.8rem
+        border: 1px solid var(--gray-op)
+        
+        @media (max-width: $mobileScreen)
+            padding: 0.3rem 0.6rem
+            font-size: 0.75rem
+
+    &__content
+        background: transparent
+        border: 2px solid var(--gray-op)
+        padding: 2rem
+        min-height: 400px
+        
+        @media (max-width: $tabletScreen)
+            padding: 1.5rem
+        
+        @media (max-width: $mobileScreen)
+            padding: 1rem
+            min-height: 300px
+
+// Discussion Hub (project list)
+.discussions-hub
+    max-width: $desktopScreen
+    margin: 0 auto
+    padding: 2rem 1rem
+    
+    @media (max-width: $mobileScreen)
+        padding: 1rem 0.5rem
+
+    &__header
+        text-align: center
+        padding: 3rem 1rem
+        margin-bottom: 2rem
+        background: var(--gray-op)
+        border: 2px solid var(--gray-op)
+        
+        @media (max-width: $mobileScreen)
+            padding: 2rem 1rem
+            margin-bottom: 1.5rem
+
+    &__icon
+        color: var(--primary)
+        margin-bottom: 1.5rem
+        
+        @media (max-width: $mobileScreen)
+            margin-bottom: 1rem
+            
+            svg
+                width: 40px
+                height: 40px
+
+    h1
+        font-size: 2rem
+        font-weight: 600
+        color: var(--white)
+        margin-bottom: 0.5rem
+        
+        @media (max-width: $mobileScreen)
+            font-size: 1.5rem
+    
+    p
+        color: var(--gray)
+        font-size: 1rem
+        
+        @media (max-width: $mobileScreen)
+            font-size: 0.9rem
+
+    &__projects
+        display: flex
+        flex-direction: column
+        gap: 0.5rem
+
+    &__project
+        display: flex
+        align-items: center
+        gap: 1rem
+        padding: 1.25rem 1.5rem
+        background: transparent
+        border: 2px solid var(--gray-op)
+        text-decoration: none
+        transition: all 0.3s ease
+        
+        @media (max-width: $mobileScreen)
+            padding: 1rem
+            gap: 0.75rem
+        
+        &:hover
+            border-color: var(--primary)
+            background: var(--gray-op)
+            
+            .discussions-hub__project-arrow
+                color: var(--primary)
+                transform: translateX(4px)
+
+    &__project-icon
+        width: 48px
+        height: 48px
+        display: flex
+        align-items: center
+        justify-content: center
+        background: var(--gray-op)
+        color: var(--primary)
+        flex-shrink: 0
+        
+        @media (max-width: $mobileScreen)
+            width: 40px
+            height: 40px
+            
+            svg
+                width: 20px
+                height: 20px
+
+    &__project-info
+        flex: 1
+        min-width: 0
+        
+        h3
+            font-size: 1rem
+            font-weight: 600
+            color: var(--white)
+            margin-bottom: 0.25rem
+            white-space: nowrap
+            overflow: hidden
+            text-overflow: ellipsis
+            
+            @media (max-width: $mobileScreen)
+                font-size: 0.9rem
+        
+        span
+            font-size: 0.85rem
+            color: var(--gray)
+            
+            @media (max-width: $mobileScreen)
+                font-size: 0.8rem
+
+    &__project-arrow
+        color: var(--gray)
+        flex-shrink: 0
+        transition: all 0.3s ease
+
+// Discussion Placeholder
+.discussion-placeholder
+    text-align: center
+    padding: 3rem 2rem
+    
+    @media (max-width: $mobileScreen)
+        padding: 2rem 1rem
+    
+    &__icon
+        margin-bottom: 2rem
+        color: var(--gray)
+        
+        svg
+            opacity: 0.5
+            
+        @media (max-width: $mobileScreen)
+            margin-bottom: 1.5rem
+            
+            svg
+                width: 48px
+                height: 48px
+    
+    h2
+        color: var(--white)
+        font-size: 1.5rem
+        font-weight: 600
+        margin-bottom: 1rem
+        
+        @media (max-width: $mobileScreen)
+            font-size: 1.25rem
+    
+    p
+        color: var(--gray)
+        line-height: 1.6
+        max-width: 500px
+        margin: 0 auto 1.5rem
+        font-size: 0.95rem
+        
+        @media (max-width: $mobileScreen)
+            font-size: 0.9rem
+            margin-bottom: 1rem
+    
+    ul
+        text-align: left
+        max-width: 400px
+        margin: 0 auto 2rem
+        padding-left: 1.5rem
+        color: var(--gray)
+        
+        @media (max-width: $mobileScreen)
+            margin-bottom: 1.5rem
+    
+    li
+        margin-bottom: 0.5rem
+        line-height: 1.5
+        font-size: 0.9rem
+        
+        @media (max-width: $mobileScreen)
+            font-size: 0.85rem
+    
+    .button
+        display: inline-flex
+        align-items: center
+        gap: 0.5rem
+
+// Giscus container
+.giscus-container
+    .giscus
+        width: 100%
+    
+    iframe
+        width: 100% !important

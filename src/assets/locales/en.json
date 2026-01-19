@@ -16,12 +16,12 @@
         "subtitle": "Browse posts by tags"
     },
     "skills": {
-    "language": "Languages",
-    "bigdata": "Big Data & Streaming",
-    "database": "Databases & Warehouses",
-    "cloud": "Cloud Platforms",
-    "tool": "Tools & Orchestration",
-    "visualization": "Data Visualization"
+        "language": "Languages",
+        "bigdata": "Big Data & Streaming",
+        "database": "Databases & Warehouses",
+        "cloud": "Cloud Platforms",
+        "tool": "Tools & Orchestration",
+        "visualization": "Data Visualization"
     },
     "projects": {
         "realtime-booking-cdc": {
@@ -80,7 +80,7 @@
                 "title": "about",
                 "description": [
                     "I’m a self-taught data engineer passionate about designing scalable systems and reliable data pipelines. I enjoy shaping raw information into meaningful insights through efficient workflows and cloud-native solutions.",
-    "Exploring new approaches, refining processes, and solving complex challenges keeps me inspired. I aim to combine technical precision with creativity, always learning and evolving as the data landscape grows."
+                    "Exploring new approaches, refining processes, and solving complex challenges keeps me inspired. I aim to combine technical precision with creativity, always learning and evolving as the data landscape grows."
                 ],
                 "button": "View all"
             },
@@ -93,7 +93,7 @@
         },
         "projects": {
             "description": "All of my projects",
-            "decent": "decent", 
+            "decent": "decent",
             "major": "major",
             "small": "small",
             "inProgress": "unfinished"
@@ -113,7 +113,7 @@
             "facts": {
                 "title": "fun-facts",
                 "list": [
-                    "I've had more comebacks in my head than in real life", 
+                    "I've had more comebacks in my head than in real life",
                     "I take longer to choose a movie than to actually watch it",
                     "I've pretended to sleep to avoid social interactions",
                     "I can eat dal-bhaat-bhujiya every single day and be happy"
@@ -127,6 +127,9 @@
         },
         "contacts": {
             "description": "How to contact me"
+        },
+        "discussions": {
+            "description": "Project discussions and Q&A"
         }
     }
 }
