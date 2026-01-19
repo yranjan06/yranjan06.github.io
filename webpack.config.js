@@ -5,7 +5,7 @@ const plugins = {
     copy: require("copy-webpack-plugin"),
     json: require("json-minimizer-webpack-plugin")
 }
-
+// -- compatable
 module.exports = {
     entry: {
         index: "./src/app/index.js",
