@@ -481,7 +481,7 @@ const media_media = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + {"36":"132c0ab3bff0f5ab7e6d","76":"4bec060eeee70737b6ef","197":"c0acafdbe17d3a0178d8","420":"90bddaebcc259dab170d","441":"ef6c5c43d28d20e8f16f","548":"6d36aa9c7084c68c0844","573":"b1ec3c0c28bdeb38dbfc","840":"41c1bf4e0a9da36764a5","847":"c67fefea234233572ce0","960":"976371b8f53b43fec44c"}[chunkId] + ".js";
+/******/ 			return "js/" + {"36":"132c0ab3bff0f5ab7e6d","76":"4bec060eeee70737b6ef","197":"c0acafdbe17d3a0178d8","420":"90bddaebcc259dab170d","441":"fc1d2c753c884bfa082e","548":"6d36aa9c7084c68c0844","573":"b1ec3c0c28bdeb38dbfc","840":"41c1bf4e0a9da36764a5","847":"c67fefea234233572ce0","960":"976371b8f53b43fec44c"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -889,7 +889,50 @@ const observer = window.IntersectionObserver ? new IntersectionObserver((entries
         observer ? observer.observe(img) : loadImage(img)
     )
 });
+;// ./src/app/helpers/initGiscus.js
+/**
+ * Initialize Giscus widget after DOM is rendered
+ * This is needed because script tags in innerHTML don't execute
+ */
+function initGiscus() {
+    const container = document.querySelector('.giscus-container[data-giscus-config]');
+
+    if (!container) return;
+
+    // Parse config from data attribute
+    const config = JSON.parse(container.dataset.giscusConfig);
+
+    // Remove any existing giscus script and widget
+    const existingScript = document.querySelector('script[src="https://giscus.app/client.js"]');
+    if (existingScript) existingScript.remove();
+
+    const existingWidget = container.querySelector('.giscus-frame');
+    if (existingWidget) existingWidget.remove();
+
+    // Create and append the giscus script
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', config.repo);
+    script.setAttribute('data-repo-id', config.repoId);
+    script.setAttribute('data-category', config.category);
+    script.setAttribute('data-category-id', config.categoryId);
+    script.setAttribute('data-mapping', 'specific');
+    script.setAttribute('data-term', config.term);
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', config.theme);
+    script.setAttribute('data-lang', config.lang);
+    script.setAttribute('data-loading', 'lazy');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.async = true;
+
+    container.appendChild(script);
+}
+
 ;// ./src/app/index.js
+
 
 
 
@@ -912,8 +955,11 @@ async function render() {
         path
     );
 
-    // Reinitialize lazy loading after content change
-    setTimeout(lazyLoading.refresh, 100);
+    // Reinitialize lazy loading and giscus after content change
+    setTimeout(() => {
+        lazyLoading.refresh();
+        initGiscus();
+    }, 100);
 }
 
 replacePath()
@@ -921,7 +967,10 @@ replacePath()
     .then(localeHandler/* default */.A)
     .then(() => {
         setTimeout(lazyLoading.observeAll, 100);
-        window.addEventListener('popstate', () => render().then(() => setTimeout(lazyLoading.refresh, 100)));
+        window.addEventListener('popstate', () => render().then(() => setTimeout(() => {
+            lazyLoading.refresh();
+            initGiscus();
+        }, 100)));
     });
 
 })();
