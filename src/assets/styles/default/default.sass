@@ -1,11 +1,18 @@
 
-body, html
+html
+    background-color: var(--background)
+
+body
     background-color: var(--background)
     color: var(--white)
     font-family: "Fira Code", monospace
     display: flex
     gap: 112px
     flex-direction: column
+    zoom: 0.9
+    
+    @media (max-width: 768px)
+        zoom: 1
 
 .dots
     width: 10vmin

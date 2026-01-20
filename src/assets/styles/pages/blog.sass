@@ -21,7 +21,11 @@ body:has(.blog-layout--full-screen) .media-header
     @media (max-width: $tabletScreen)
         flex-direction: column
         gap: 1.5rem
-        padding: 1rem
+        padding: 0.5rem
+    
+    @media (max-width: $mobileScreen)
+        padding: 0.25rem
+        gap: 0.5rem
 
     // Full screen layout for blog post view
     &--full-screen
@@ -35,9 +39,13 @@ body:has(.blog-layout--full-screen) .media-header
         
         @media (max-width: $tabletScreen)
             padding: 1rem 1.5rem
+            width: calc(100vw - 16px)
+            margin-left: calc(-50vw + 50% + 8px)
         
         @media (max-width: $mobileScreen)
-            padding: 1rem
+            padding: 0.25rem
+            width: 100%
+            margin-left: 0
 
 .blog-sidebar
     width: 300px
@@ -186,13 +194,15 @@ body:has(.blog-layout--full-screen) .media-header
     
     @media (max-width: $desktopScreen)
         padding: 1.5rem
-        margin-left: 312px
     
     @media (max-width: $tabletScreen)
         margin-left: 0
+        width: 100%
     
     @media (max-width: $mobileScreen)
-        padding: 1rem
+        padding: 0.75rem
+        width: 100%
+        border: 2px solid var(--gray-op)
 
     // Full screen styles - no margin when sidebar is hidden
     .blog-layout--full-screen &
@@ -480,10 +490,15 @@ body:has(.blog-layout--full-screen) .media-header
 .blog-full-layout
     display: flex
     gap: 0.25rem
+    width: 100%
     
     @media (max-width: $desktopScreen)
         flex-direction: column
         gap: 0.5rem
+    
+    @media (max-width: $mobileScreen)
+        width: 100%
+        padding: 0
 
 .blog-toc
     width: 300px
