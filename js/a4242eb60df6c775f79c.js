@@ -49,11 +49,11 @@ const giscusConfig = {
     // Project-specific configs (optional - override default if needed)
     projects: {
         "realtime-booking-cdc": {
-            enabled: false,
-            repo: "ranjanyadav/realtime-booking-cdc-pipeline",
-            repoId: "", // TODO: Add when repo is created
+            enabled: true,
+            repo: "yranjan06/realtime-booking-cdc-pipeline",
+            repoId: "R_kgDOQ9P45A",
             category: "General",
-            categoryId: "", // TODO: Add when category is created
+            categoryId: "DIC_kwDOQ9P45M4C1LPn",
         },
         "fintech-datalake": {
             enabled: false,
