@@ -289,8 +289,19 @@
 
 // Giscus container
 .giscus-container
+    width: 100%
+    min-height: 300px
+    
     .giscus
         width: 100%
+        min-height: 300px
     
+    // Safari-specific fixes for iframe rendering
     iframe
         width: 100% !important
+        min-width: 100% !important
+        border: none !important
+        display: block !important
+        // Safari iframe fix
+        -webkit-transform: translateZ(0)
+        transform: translateZ(0)
