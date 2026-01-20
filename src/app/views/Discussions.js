@@ -92,24 +92,36 @@ export default (t, t2) => {
             <div class="discussion-page__content">
                 ${enabled ? `
                     <div class="giscus-container">
-                        <script src="https://giscus.app/client.js"
-                            data-repo="${giscusConfig.repo}"
-                            data-repo-id="${giscusConfig.repoId}"
-                            data-category="${giscusConfig.category}"
-                            data-category-id="${giscusConfig.categoryId}"
-                            data-mapping="specific"
-                            data-term="${projectId}"
-                            data-strict="0"
-                            data-reactions-enabled="1"
-                            data-emit-metadata="0"
-                            data-input-position="top"
-                            data-theme="${giscusConfig.theme}"
-                            data-lang="${giscusConfig.lang}"
-                            data-loading="lazy"
-                            crossorigin="anonymous"
-                            async>
-                        </script>
+                        <div class="giscus"></div>
                     </div>
+                    <script>
+                        (function() {
+                            // Remove any existing giscus script to avoid duplicates
+                            const existingScript = document.querySelector('script[src="https://giscus.app/client.js"]');
+                            if (existingScript) existingScript.remove();
+                            
+                            // Create and append the giscus script dynamically
+                            const script = document.createElement('script');
+                            script.src = 'https://giscus.app/client.js';
+                            script.setAttribute('data-repo', '${giscusConfig.repo}');
+                            script.setAttribute('data-repo-id', '${giscusConfig.repoId}');
+                            script.setAttribute('data-category', '${giscusConfig.category}');
+                            script.setAttribute('data-category-id', '${giscusConfig.categoryId}');
+                            script.setAttribute('data-mapping', 'specific');
+                            script.setAttribute('data-term', '${projectId}');
+                            script.setAttribute('data-strict', '0');
+                            script.setAttribute('data-reactions-enabled', '1');
+                            script.setAttribute('data-emit-metadata', '0');
+                            script.setAttribute('data-input-position', 'top');
+                            script.setAttribute('data-theme', '${giscusConfig.theme}');
+                            script.setAttribute('data-lang', '${giscusConfig.lang}');
+                            script.setAttribute('data-loading', 'lazy');
+                            script.setAttribute('crossorigin', 'anonymous');
+                            script.async = true;
+                            
+                            document.querySelector('.giscus-container').appendChild(script);
+                        })();
+                    </script>
                 ` : `
                     <div class="discussion-placeholder">
                         <div class="discussion-placeholder__icon">
