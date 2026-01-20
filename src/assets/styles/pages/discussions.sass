@@ -287,14 +287,30 @@
         align-items: center
         gap: 0.5rem
 
-// Giscus container
+// Giscus container - scrollable chat-like box
 .giscus-container
     width: 100%
-    min-height: 300px
+    max-height: 600px
+    overflow-y: auto
+    overflow-x: hidden
+    
+    // Custom scrollbar styling
+    &::-webkit-scrollbar
+        width: 8px
+    
+    &::-webkit-scrollbar-track
+        background: var(--gray-op)
+    
+    &::-webkit-scrollbar-thumb
+        background: var(--gray)
+        border-radius: 4px
+        
+        &:hover
+            background: var(--primary)
     
     .giscus
         width: 100%
-        min-height: 300px
+        min-height: 400px
     
     // Safari-specific fixes for iframe rendering
     iframe
@@ -305,3 +321,4 @@
         // Safari iframe fix
         -webkit-transform: translateZ(0)
         transform: translateZ(0)
+
