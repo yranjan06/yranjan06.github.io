@@ -921,7 +921,7 @@ function initGiscus() {
     script.setAttribute('data-strict', '0');
     script.setAttribute('data-reactions-enabled', '1');
     script.setAttribute('data-emit-metadata', '0');
-    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-input-position', 'bottom');
     script.setAttribute('data-theme', config.theme);
     script.setAttribute('data-lang', config.lang);
     script.setAttribute('data-loading', 'lazy');
