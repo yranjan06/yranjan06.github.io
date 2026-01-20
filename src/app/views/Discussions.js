@@ -33,7 +33,7 @@ export default (t, t2) => {
                     ${projects.map(p => {
             const name = t2.projects[p.id]?.name || p.id;
             return /*html*/ `
-                            <a href="/discussions#${p.id}" class="discussions-hub__project" onclick="event.preventDefault(); window.location.href = '/discussions#${p.id}'; window.location.reload();">
+                            <a href="/discussions#${p.id}" class="discussions-hub__project" onclick="event.preventDefault(); window.location.hash = '${p.id}'; setTimeout(function() { window.location.reload(); }, 50);">
                                 <div class="discussions-hub__project-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M1.75 1h12.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 14.25 14H8.061l-2.574 2.573A1.458 1.458 0 0 1 3 15.543V14H1.75A1.75 1.75 0 0 1 0 12.25v-9.5C0 1.784.784 1 1.75 1Z"/>
