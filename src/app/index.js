@@ -5,6 +5,7 @@ import localeHandler from "./helpers/localeHandler";
 import loadCssFile from "./helpers/loadCssFile";
 import replacePath from "./helpers/replacePath";
 import lazyLoader from "./helpers/lazyLoading";
+import initGiscus from "./helpers/initGiscus";
 
 import "styles/styles.sass";
 
@@ -20,8 +21,11 @@ async function render() {
         path
     );
 
-    // Reinitialize lazy loading after content change
-    setTimeout(lazyLoader.refresh, 100);
+    // Reinitialize lazy loading and giscus after content change
+    setTimeout(() => {
+        lazyLoader.refresh();
+        initGiscus();
+    }, 100);
 }
 
 replacePath()
@@ -29,5 +33,8 @@ replacePath()
     .then(localeHandler)
     .then(() => {
         setTimeout(lazyLoader.observeAll, 100);
-        window.addEventListener('popstate', () => render().then(() => setTimeout(lazyLoader.refresh, 100)));
+        window.addEventListener('popstate', () => render().then(() => setTimeout(() => {
+            lazyLoader.refresh();
+            initGiscus();
+        }, 100)));
     });
