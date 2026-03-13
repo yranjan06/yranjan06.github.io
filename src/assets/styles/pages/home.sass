@@ -11,17 +11,18 @@
 @use '../components/skillBlock'
 
 .page--desktop-mobile-active
-<<<<<<< ours
-=======
-    .home__desktop-shell
-        width: 100%
+    position: relative
+    overflow-x: hidden
 
-    .home__desktop-sections
+    .page__canvas
+        width: 100%
+        position: absolute
+        top: 0
+        left: 0
         transform-origin: top left
 
->>>>>>> theirs
     .content
-        padding-left: 68px
+        padding-left: 56px
         padding-right: 14px
         box-sizing: border-box
 
@@ -51,93 +52,42 @@
         @media (max-width: $mobileScreen)
             columns: 3
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
     .contacts
-        width: min(100%, 920px)
-        margin: 0 auto
+        width: 100%
+        max-width: none
 
         &__content
-<<<<<<< ours
-            flex-wrap: nowrap
-            align-items: flex-start
-            gap: 48px
-=======
-            display: grid
-            grid-template-columns: minmax(0, 1fr)
-            gap: 24px
-            margin-top: 32px
->>>>>>> theirs
-
-        &__description
-            flex: 1 1 auto
-            max-width: 620px
-
-        &__media
-            flex: 0 0 280px
-            margin-left: auto
-
-    .footer__inner
-        @media (max-width: $tabletScreen)
-            flex-wrap: nowrap
-
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-    .footer
-        .container
-            padding-left: 68px
-            padding-right: 14px
-            box-sizing: border-box
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-
-        &__inner
-<<<<<<< ours
-            align-items: flex-start
-
-        &__info
-            flex: 1 1 auto
-            min-width: 0
-
-        &__media
-            flex: 0 0 auto
-=======
-            display: grid
-            grid-template-columns: minmax(0, 1fr)
-            gap: 24px
-            margin-bottom: 24px
-
-        &__header
-            flex-wrap: wrap
-            gap: 12px
-
-        &__email
-            overflow-wrap: anywhere
-
-        &__description
-            line-height: 1.6
-
-        &__media
             display: flex
             justify-content: space-between
-            align-items: center
-            gap: 16px
+            align-items: start
+            flex-wrap: nowrap
+            gap: 32px
+            margin-top: 48px
 
-        &__title
-            font-size: 20px
+        &__description
+            max-width: 600px
 
-        &__copyright
-            margin-top: 16px
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
+        &__media
+            width: auto
+            min-width: 320px
+            padding: 16px
+
+    .contact
+        gap: 8px
+
+        img
+            width: 18px
+            height: 18px
+
+    .footer
+        .container
+            padding-left: 56px
+            padding-right: 14px
+            box-sizing: border-box
+
+        &__inner
+            display: flex
+            justify-content: space-between
+            flex-wrap: nowrap
+            gap: 32px
+            margin-bottom: 48px
