@@ -1,5 +1,6 @@
 const DESKTOP_CANVAS_WIDTH = 1024;
-const MOBILE_BREAKPOINT = 768;
+// Keep the compressed desktop-like mode for phones, not tablets like iPad mini.
+const MOBILE_BREAKPOINT = 767;
 
 let resizeObserver = null;
 let observedCanvas = null;

@@ -1,4 +1,5 @@
 import Hero from "@/blocks/home/Hero.js";
+import Notes from "@/blocks/home/Notes.js";
 import Quote from "@/blocks/home/Quote.js";
 import Projects from "@/blocks/home/Projects.js";
 import Skills from "@/blocks/home/Skills.js";
@@ -12,6 +13,7 @@ export default (t, locale) => {
     return /*html*/`
         ${Hero(t.hero)}
         ${Quote(t.quote)}
+        ${Notes()}
         ${Projects(t.projects, locale.projects)}
         ${Skills(t.skills, locale.skills)}
         ${About(t.about)}

@@ -10,6 +10,9 @@
 @use '../components/project'
 @use '../components/skillBlock'
 
+.notes--mobile-only
+    display: none
+
 .page--desktop-mobile-active
     position: relative
     overflow-x: hidden
@@ -26,6 +29,19 @@
         padding-right: 14px
         box-sizing: border-box
 
+    .hero
+        .dots
+            width: 16vmin
+
+        &__logo
+            width: 68vmin
+            top: 8%
+            left: 10%
+
+        &__image
+            position: relative
+            z-index: 2
+
     .quote
         width: min(100%, 860px)
         margin: 0 auto
@@ -33,13 +49,95 @@
         &__text
             margin: 0
             padding: 36px 44px
-            font-size: 42px
+            font-size: 36px
             font-weight: 700
             line-height: 1.35
             text-align: center
+            white-space: nowrap
 
         &__author
             font-size: 20px
+
+    .notes--mobile-only
+        display: block
+        width: 100%
+
+    .notes
+        &__header
+            display: flex
+            justify-content: space-between
+            align-items: center
+            flex-wrap: wrap
+            gap: 16px
+            margin-bottom: 48px
+
+        &__link
+            text-decoration: underline
+
+    .notes__list
+        display: grid
+        grid-template-columns: minmax(0, 1fr)
+        gap: 16px
+
+    .notes__external-list
+        display: grid
+        grid-template-columns: minmax(0, 1fr)
+        gap: 12px
+        margin-top: 16px
+
+    .note-card
+        border: 1px solid var(--gray)
+        padding: 20px
+        min-height: 0
+        display: grid
+        grid-template-columns: minmax(0, 1fr)
+        align-items: start
+
+        &__meta
+            color: var(--gray)
+            font-size: 14px
+            margin-bottom: 12px
+
+        &__title
+            font-size: 24px
+            font-weight: 600
+            line-height: 1.3
+
+            a
+                color: var(--white)
+
+                &:hover
+                    color: var(--primary)
+
+        &__excerpt
+            color: var(--gray)
+            margin-top: 16px
+            display: -webkit-box
+            -webkit-box-orient: vertical
+            -webkit-line-clamp: 2
+            overflow: hidden
+
+    .note-link-card
+        display: block
+        border: 1px solid var(--gray)
+        padding: 18px 20px
+        color: var(--white)
+
+        &:hover
+            border-color: var(--primary)
+
+        &__title
+            font-size: 20px
+            font-weight: 600
+            line-height: 1.3
+
+        &__description
+            color: var(--gray)
+            margin-top: 10px
+
+        &__cta
+            color: var(--primary)
+            margin-top: 14px
 
     .project-list
         @media (max-width: $desktopScreen)
@@ -51,6 +149,9 @@
 
         @media (max-width: $mobileScreen)
             columns: 3
+
+    .illustrations__logo
+        width: 42vmin
 
     .contacts
         width: 100%
