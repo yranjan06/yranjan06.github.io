@@ -147,13 +147,20 @@ var localeHandler = __webpack_require__(788);
 
 /* harmony default export */ const Layout = (async (content, path) => {
     const locale = await (0,localeHandler/* getLocale */.J)()
+    const pageClasses = ["page", `page--${path.name}`];
+
+    if (path.name === "home") pageClasses.push("page--desktop-mobile");
 
     return /*html*/ `
         ${Header(locale.header)}
-        <div class="container content">
-            ${content(locale.pages[path.name], locale)}
+        <div class="${pageClasses.join(" ")}">
+            <div class="page__canvas">
+                <div class="container content">
+                    ${content(locale.pages[path.name], locale)}
+                </div>
+                ${Footer(locale.footer)}
+            </div>
         </div>
-        ${Footer(locale.footer)}
     `;
 });
 
@@ -481,7 +488,7 @@ const media_media = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + {"36":"132c0ab3bff0f5ab7e6d","76":"4bec060eeee70737b6ef","197":"c0acafdbe17d3a0178d8","420":"90bddaebcc259dab170d","441":"5a5b9e33b411d706f67e","548":"6d36aa9c7084c68c0844","573":"b1ec3c0c28bdeb38dbfc","840":"41c1bf4e0a9da36764a5","847":"c67fefea234233572ce0","960":"976371b8f53b43fec44c"}[chunkId] + ".js";
+/******/ 			return "js/" + {"36":"87476c8feae5ef8fc61e","76":"4bec060eeee70737b6ef","197":"c0acafdbe17d3a0178d8","420":"90bddaebcc259dab170d","441":"5a5b9e33b411d706f67e","548":"6d36aa9c7084c68c0844","573":"b1ec3c0c28bdeb38dbfc","840":"41c1bf4e0a9da36764a5","847":"c67fefea234233572ce0","960":"976371b8f53b43fec44c"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -931,7 +938,87 @@ function initGiscus() {
     container.appendChild(script);
 }
 
+;// ./src/app/helpers/applyDesktopMobileMode.js
+const DESKTOP_CANVAS_WIDTH = 1024;
+const MOBILE_BREAKPOINT = 768;
+
+let resizeObserver = null;
+let observedCanvas = null;
+let resizeHandlerAttached = false;
+
+function clearDesktopMobileMode(page, canvas) {
+    document.body.classList.remove("body--desktop-mobile-home");
+    page.classList.remove("page--desktop-mobile-active");
+    page.style.height = "";
+    page.style.overflow = "";
+
+    canvas.style.width = "";
+    canvas.style.transform = "";
+    canvas.style.transformOrigin = "";
+}
+
+function syncDesktopMobileMode() {
+    const page = document.querySelector(".page--desktop-mobile");
+    const canvas = page?.querySelector(".page__canvas");
+
+    if (!page || !canvas) return;
+
+    if (window.innerWidth > MOBILE_BREAKPOINT) {
+        clearDesktopMobileMode(page, canvas);
+        return;
+    }
+
+    document.body.classList.add("body--desktop-mobile-home");
+    page.classList.add("page--desktop-mobile-active");
+    canvas.style.width = `${DESKTOP_CANVAS_WIDTH}px`;
+    canvas.style.transform = "";
+    canvas.style.transformOrigin = "top left";
+
+    const scale = Math.min(page.clientWidth / DESKTOP_CANVAS_WIDTH, 1);
+    const height = canvas.scrollHeight * scale;
+
+    page.style.height = `${height}px`;
+    page.style.overflow = "hidden";
+
+    canvas.style.transform = `scale(${scale})`;
+}
+
+function disconnectObserver() {
+    if (!resizeObserver) return;
+
+    resizeObserver.disconnect();
+    resizeObserver = null;
+    observedCanvas = null;
+}
+
+function applyDesktopMobileMode() {
+    const page = document.querySelector(".page--desktop-mobile");
+    const canvas = page?.querySelector(".page__canvas");
+
+    if (!page || !canvas) {
+        document.body.classList.remove("body--desktop-mobile-home");
+        disconnectObserver();
+        return;
+    }
+
+    if (observedCanvas !== canvas) {
+        disconnectObserver();
+
+        resizeObserver = new ResizeObserver(syncDesktopMobileMode);
+        resizeObserver.observe(canvas);
+        observedCanvas = canvas;
+    }
+
+    if (!resizeHandlerAttached) {
+        window.addEventListener("resize", syncDesktopMobileMode);
+        resizeHandlerAttached = true;
+    }
+
+    syncDesktopMobileMode();
+}
+
 ;// ./src/app/index.js
+
 
 
 
@@ -955,10 +1042,13 @@ async function render() {
         path
     );
 
+    applyDesktopMobileMode();
+
     // Reinitialize lazy loading and giscus after content change
     setTimeout(() => {
         lazyLoading.refresh();
         initGiscus();
+        applyDesktopMobileMode();
     }, 100);
 }
 
