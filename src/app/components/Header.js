@@ -3,9 +3,12 @@ import MediaIcon from "./MediaIcon";
 
 const paths = ["/", "/projects", "/about-me", "/blog"]
 
-export default (t) => {
+export default (t, pathName = "") => {
+    const headerClasses = ["header"];
+    if (pathName === "home") headerClasses.push("header--home");
+
     return /*html*/ `
-        <header class="header">
+        <header class="${headerClasses.join(" ")}">
             <input class="hamburger" type="checkbox" aria-label="Menu" />
 
             <div class="media-header">

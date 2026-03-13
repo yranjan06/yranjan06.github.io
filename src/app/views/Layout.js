@@ -9,7 +9,7 @@ export default async (content, path) => {
     if (path.name === "home") pageClasses.push("page--desktop-mobile");
 
     return /*html*/ `
-        ${Header(locale.header)}
+        ${Header(locale.header, path.name)}
         <div class="${pageClasses.join(" ")}">
             <div class="page__canvas">
                 <div class="container content">

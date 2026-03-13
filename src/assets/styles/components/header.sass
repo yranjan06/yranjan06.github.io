@@ -159,6 +159,17 @@ $screen: 768px
         &__links, .dropdown
             display: none
 
+.header--home
+    @media (min-width: $desktopScreen)
+        .container
+            max-width: 820px
+            padding-left: 28px
+            padding-right: 28px
+            box-sizing: border-box
+
+        .header__links
+            gap: 24px
+
 body.body--desktop-mobile-home
     .media-header
         @media (max-width: $desktopScreen)
