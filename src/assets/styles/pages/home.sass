@@ -9,3 +9,135 @@
 
 @use '../components/project'
 @use '../components/skillBlock'
+
+.page--desktop-mobile-active
+<<<<<<< ours
+=======
+    .home__desktop-shell
+        width: 100%
+
+    .home__desktop-sections
+        transform-origin: top left
+
+>>>>>>> theirs
+    .content
+        padding-left: 68px
+        padding-right: 14px
+        box-sizing: border-box
+
+    .quote
+        width: min(100%, 860px)
+        margin: 0 auto
+
+        &__text
+            margin: 0
+            padding: 36px 44px
+            font-size: 42px
+            font-weight: 700
+            line-height: 1.35
+            text-align: center
+
+        &__author
+            font-size: 20px
+
+    .project-list
+        @media (max-width: $desktopScreen)
+            grid-template-columns: repeat(3, 1fr)
+
+    .skills__list
+        @media (max-width: $tabletScreen)
+            columns: 3
+
+        @media (max-width: $mobileScreen)
+            columns: 3
+
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+    .contacts
+        width: min(100%, 920px)
+        margin: 0 auto
+
+        &__content
+<<<<<<< ours
+            flex-wrap: nowrap
+            align-items: flex-start
+            gap: 48px
+=======
+            display: grid
+            grid-template-columns: minmax(0, 1fr)
+            gap: 24px
+            margin-top: 32px
+>>>>>>> theirs
+
+        &__description
+            flex: 1 1 auto
+            max-width: 620px
+
+        &__media
+            flex: 0 0 280px
+            margin-left: auto
+
+    .footer__inner
+        @media (max-width: $tabletScreen)
+            flex-wrap: nowrap
+
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+    .footer
+        .container
+            padding-left: 68px
+            padding-right: 14px
+            box-sizing: border-box
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
+
+        &__inner
+<<<<<<< ours
+            align-items: flex-start
+
+        &__info
+            flex: 1 1 auto
+            min-width: 0
+
+        &__media
+            flex: 0 0 auto
+=======
+            display: grid
+            grid-template-columns: minmax(0, 1fr)
+            gap: 24px
+            margin-bottom: 24px
+
+        &__header
+            flex-wrap: wrap
+            gap: 12px
+
+        &__email
+            overflow-wrap: anywhere
+
+        &__description
+            line-height: 1.6
+
+        &__media
+            display: flex
+            justify-content: space-between
+            align-items: center
+            gap: 16px
+
+        &__title
+            font-size: 20px
+
+        &__copyright
+            margin-top: 16px
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs

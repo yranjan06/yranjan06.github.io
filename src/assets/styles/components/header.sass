@@ -159,4 +159,26 @@ $screen: 768px
         &__links, .dropdown
             display: none
 
+body.body--desktop-mobile-home
+    .media-header
+        @media (max-width: $desktopScreen)
+            display: flex
+            position: fixed
+            top: 58px
+            left: 4px
+            gap: 6px
+            z-index: 1001
+
+            .media
+                width: 18px
+
+            .media-header__links
+                gap: 6px
+
+            .media-header__line
+                height: 96px
+                margin-left: 0
+                align-self: center
+                opacity: 0.85
+
         

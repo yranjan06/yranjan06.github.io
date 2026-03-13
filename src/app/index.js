@@ -6,6 +6,7 @@ import loadCssFile from "./helpers/loadCssFile";
 import replacePath from "./helpers/replacePath";
 import lazyLoader from "./helpers/lazyLoading";
 import initGiscus from "./helpers/initGiscus";
+import applyDesktopMobileMode from "./helpers/applyDesktopMobileMode";
 
 import "styles/styles.sass";
 
@@ -21,10 +22,13 @@ async function render() {
         path
     );
 
+    applyDesktopMobileMode();
+
     // Reinitialize lazy loading and giscus after content change
     setTimeout(() => {
         lazyLoader.refresh();
         initGiscus();
+        applyDesktopMobileMode();
     }, 100);
 }
 
