@@ -278,12 +278,14 @@ var map = {
 		548
 	],
 	"./Blog": [
-		420,
-		420
+		733,
+		76,
+		733
 	],
 	"./Blog.js": [
-		420,
-		420
+		733,
+		76,
+		733
 	],
 	"./Categories": [
 		197,
@@ -314,14 +316,14 @@ var map = {
 		441
 	],
 	"./Home": [
-		36,
+		929,
 		76,
-		36
+		929
 	],
 	"./Home.js": [
-		36,
+		929,
 		76,
-		36
+		929
 	],
 	"./Layout": [
 		669
@@ -488,7 +490,7 @@ const media_media = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + {"36":"87476c8feae5ef8fc61e","76":"4bec060eeee70737b6ef","197":"c0acafdbe17d3a0178d8","420":"90bddaebcc259dab170d","441":"5a5b9e33b411d706f67e","548":"6d36aa9c7084c68c0844","573":"b1ec3c0c28bdeb38dbfc","840":"41c1bf4e0a9da36764a5","847":"c67fefea234233572ce0","960":"976371b8f53b43fec44c"}[chunkId] + ".js";
+/******/ 			return "js/" + {"76":"190c9cd102f038412ff7","197":"c0acafdbe17d3a0178d8","441":"5a5b9e33b411d706f67e","548":"6d36aa9c7084c68c0844","573":"b1ec3c0c28bdeb38dbfc","733":"0b7774735f6e687ac7a2","840":"41c1bf4e0a9da36764a5","847":"c67fefea234233572ce0","929":"61f96f752b02a908760e","960":"976371b8f53b43fec44c"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -498,10 +500,10 @@ const media_media = {
 /******/ 		__webpack_require__.miniCssF = (chunkId) => {
 /******/ 			// return url for filenames not based on template
 /******/ 			if (chunkId === 548) return "css/548.css";
-/******/ 			if (chunkId === 420) return "css/420.css";
+/******/ 			if (chunkId === 733) return "css/733.css";
 /******/ 			if (chunkId === 197) return "css/197.css";
 /******/ 			if (chunkId === 441) return "css/441.css";
-/******/ 			if (chunkId === 36) return "css/36.css";
+/******/ 			if (chunkId === 929) return "css/929.css";
 /******/ 			if (chunkId === 847) return "css/847.css";
 /******/ 			if (chunkId === 840) return "css/840.css";
 /******/ 			// return url for filenames based on template
@@ -672,7 +674,7 @@ const media_media = {
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"36":1,"197":1,"420":1,"441":1,"548":1,"840":1,"847":1};
+/******/ 			var cssChunks = {"197":1,"441":1,"548":1,"733":1,"840":1,"847":1,"929":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {
@@ -940,7 +942,8 @@ function initGiscus() {
 
 ;// ./src/app/helpers/applyDesktopMobileMode.js
 const DESKTOP_CANVAS_WIDTH = 1024;
-const MOBILE_BREAKPOINT = 768;
+// Keep the compressed desktop-like mode for phones, not tablets like iPad mini.
+const MOBILE_BREAKPOINT = 767;
 
 let resizeObserver = null;
 let observedCanvas = null;
