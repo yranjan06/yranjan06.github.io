@@ -5,7 +5,7 @@ const paths = ["/", "/projects", "/about-me", "/blog"]
 
 export default (t, pathName = "") => {
     const headerClasses = ["header"];
-    if (pathName === "home") headerClasses.push("header--home");
+    if (pathName) headerClasses.push(`header--${pathName}`);
 
     return /*html*/ `
         <header class="${headerClasses.join(" ")}">
