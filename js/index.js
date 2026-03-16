@@ -88,7 +88,7 @@ const paths = ["/", "/projects", "/about-me", "/blog"]
 
 /* harmony default export */ const Header = ((t, pathName = "") => {
     const headerClasses = ["header"];
-    if (pathName === "home") headerClasses.push("header--home");
+    if (pathName) headerClasses.push(`header--${pathName}`);
 
     return /*html*/ `
         <header class="${headerClasses.join(" ")}">
@@ -493,7 +493,7 @@ const media_media = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + {"76":"190c9cd102f038412ff7","197":"c0acafdbe17d3a0178d8","441":"5a5b9e33b411d706f67e","548":"6d36aa9c7084c68c0844","573":"b1ec3c0c28bdeb38dbfc","733":"0b7774735f6e687ac7a2","840":"41c1bf4e0a9da36764a5","847":"c67fefea234233572ce0","929":"f8f8b0395439901c888f","960":"976371b8f53b43fec44c"}[chunkId] + ".js";
+/******/ 			return "js/" + {"76":"190c9cd102f038412ff7","197":"c0acafdbe17d3a0178d8","441":"5a5b9e33b411d706f67e","548":"a18b56abec3c71ce15c0","573":"b1ec3c0c28bdeb38dbfc","733":"0b7774735f6e687ac7a2","840":"41c1bf4e0a9da36764a5","847":"51e567f40f8ab7801d02","929":"8c5b8d31d5cb6d474063","960":"976371b8f53b43fec44c"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
