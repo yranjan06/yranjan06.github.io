@@ -319,14 +319,14 @@ var map = {
 		441
 	],
 	"./Home": [
-		929,
+		115,
 		76,
-		929
+		115
 	],
 	"./Home.js": [
-		929,
+		115,
 		76,
-		929
+		115
 	],
 	"./Layout": [
 		669
@@ -493,7 +493,7 @@ const media_media = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + {"76":"190c9cd102f038412ff7","197":"c0acafdbe17d3a0178d8","441":"5a5b9e33b411d706f67e","548":"a18b56abec3c71ce15c0","573":"b1ec3c0c28bdeb38dbfc","733":"0b7774735f6e687ac7a2","840":"41c1bf4e0a9da36764a5","847":"51e567f40f8ab7801d02","929":"8c5b8d31d5cb6d474063","960":"976371b8f53b43fec44c"}[chunkId] + ".js";
+/******/ 			return "js/" + {"76":"795647f0f4a9bb3ecb62","115":"3b58f41b43e395d31316","197":"c0acafdbe17d3a0178d8","441":"5a5b9e33b411d706f67e","548":"a18b56abec3c71ce15c0","573":"b1ec3c0c28bdeb38dbfc","733":"c64a675ae30299cf0c4a","840":"41c1bf4e0a9da36764a5","847":"51e567f40f8ab7801d02","960":"976371b8f53b43fec44c"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -506,7 +506,7 @@ const media_media = {
 /******/ 			if (chunkId === 733) return "css/733.css";
 /******/ 			if (chunkId === 197) return "css/197.css";
 /******/ 			if (chunkId === 441) return "css/441.css";
-/******/ 			if (chunkId === 929) return "css/929.css";
+/******/ 			if (chunkId === 115) return "css/115.css";
 /******/ 			if (chunkId === 847) return "css/847.css";
 /******/ 			if (chunkId === 840) return "css/840.css";
 /******/ 			// return url for filenames based on template
@@ -677,7 +677,7 @@ const media_media = {
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"197":1,"441":1,"548":1,"733":1,"840":1,"847":1,"929":1};
+/******/ 			var cssChunks = {"115":1,"197":1,"441":1,"548":1,"733":1,"840":1,"847":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {
