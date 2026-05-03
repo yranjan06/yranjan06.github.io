@@ -3,7 +3,7 @@ import { blogPosts } from "@/consts/blogPosts.js";
 const featuredNotes = blogPosts
     .filter((post) => !post.locked)
     .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 1);
+    .slice(0, 3);
 
 const externalNotes = [
     {
@@ -30,7 +30,7 @@ export default () => {
     if (!featuredNotes.length && !externalNotes.length) return "";
 
     return /*html*/ `
-        <section class="notes notes--mobile-only">
+        <section class="notes">
             <div class="notes__header">
                 <h2 class="h2">blogs</h2>
                 <a class="notes__link" href="/blog">View all ~~></a>

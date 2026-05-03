@@ -1,7 +1,13 @@
+import { azureDataEngineeringPart3Content } from './azureDataEngineeringPart3.js';
+import { azurePart2Content } from './azurePart2.js';
+import { azurePart1Content } from './azurePart1.js';
 import { azurePart3Content } from './azurePart3.js';
 import { llmJudgeAlignmentContent } from './llmJudgeAlignment.js';
 
 export const blogPosts = [
+    azureDataEngineeringPart3Content,
+    azurePart2Content,
+    azurePart1Content,
     llmJudgeAlignmentContent,
     azurePart3Content,
     {

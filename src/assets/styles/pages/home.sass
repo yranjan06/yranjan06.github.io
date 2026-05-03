@@ -100,6 +100,67 @@
                 gap: 4px 6px
                 padding: 4px
 
+        .notes
+            &__header
+                margin-bottom: 24px
+
+            &__link
+                font-size: 11px
+
+            &__list
+                gap: 8px
+
+            &__external-list
+                gap: 8px
+                margin-top: 8px
+
+        .note-card
+            padding: 9px
+
+            &__meta
+                font-size: 10px
+                line-height: 1.4
+                margin-bottom: 6px
+
+            &__title
+                font-size: 16px
+
+            &__excerpt
+                font-size: 12px
+                line-height: 1.5
+                margin-top: 6px
+
+        .note-link-card
+            padding: 9px
+
+            &__title
+                font-size: 16px
+
+            &__description
+                font-size: 12px
+                line-height: 1.5
+                margin-top: 6px
+
+            &__cta
+                font-size: 11px
+                margin-top: 8px
+
+        .gen-ai-card
+            &__eyebrow, &__techs
+                font-size: 10px
+                line-height: 1.4
+
+            &__metrics
+                gap: 6px
+                margin-top: 8px
+
+            &__metric
+                padding: 6px
+                font-size: 10px
+
+                strong
+                    font-size: 14px
+
         .skills
             &__content
                 align-items: flex-start
@@ -245,8 +306,122 @@
                 line-height: 1.45
                 word-break: break-word
 
-.notes--mobile-only
-    display: none
+.notes
+    width: 100%
+
+    &__header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-wrap: wrap
+        gap: 16px
+        margin-bottom: 48px
+
+    &__link
+        text-decoration: underline
+
+        &:hover
+            color: var(--primary)
+
+    &__list
+        display: grid
+        grid-template-columns: minmax(0, 1fr)
+        gap: 16px
+
+    &__external-list
+        display: grid
+        grid-template-columns: minmax(0, 1fr)
+        gap: 12px
+        margin-top: 16px
+
+.note-card
+    border: 1px solid var(--gray)
+    padding: 20px
+    min-height: 0
+    display: grid
+    grid-template-columns: minmax(0, 1fr)
+    align-items: start
+
+    &__meta
+        color: var(--gray)
+        font-size: 14px
+        margin-bottom: 12px
+
+    &__title
+        font-size: 24px
+        font-weight: 600
+        line-height: 1.3
+
+        a
+            color: var(--white)
+
+            &:hover
+                color: var(--primary)
+
+    &__excerpt
+        color: var(--gray)
+        margin-top: 16px
+        display: -webkit-box
+        -webkit-box-orient: vertical
+        -webkit-line-clamp: 2
+        overflow: hidden
+
+.note-link-card
+    display: block
+    border: 1px solid var(--gray)
+    padding: 18px 20px
+    color: var(--white)
+
+    &:hover
+        border-color: var(--primary)
+
+    &__title
+        font-size: 20px
+        font-weight: 600
+        line-height: 1.3
+
+    &__description
+        color: var(--gray)
+        margin-top: 10px
+
+    &__cta
+        color: var(--primary)
+        margin-top: 14px
+
+.gen-ai-card
+    &__eyebrow
+        color: var(--gray)
+        font-size: 14px
+        margin-bottom: 10px
+
+    &__metrics
+        display: grid
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+        gap: 8px
+        margin-top: 16px
+
+        @media (max-width: $mobileScreen)
+            grid-template-columns: minmax(0, 1fr)
+
+    &__metric
+        border: 1px solid var(--gray)
+        color: var(--gray)
+        padding: 8px
+        font-size: 12px
+        line-height: 1.4
+
+        strong
+            display: block
+            color: var(--white)
+            font-size: 18px
+            line-height: 1.1
+            margin-bottom: 4px
+
+    &__techs
+        color: var(--gray)
+        font-size: 13px
+        line-height: 1.5
+        margin-top: 14px
 
 .page--desktop-mobile-active
     position: relative
@@ -292,87 +467,6 @@
 
         &__author
             font-size: 20px
-
-    .notes--mobile-only
-        display: block
-        width: 100%
-
-    .notes
-        &__header
-            display: flex
-            justify-content: space-between
-            align-items: center
-            flex-wrap: wrap
-            gap: 16px
-            margin-bottom: 48px
-
-        &__link
-            text-decoration: underline
-
-    .notes__list
-        display: grid
-        grid-template-columns: minmax(0, 1fr)
-        gap: 16px
-
-    .notes__external-list
-        display: grid
-        grid-template-columns: minmax(0, 1fr)
-        gap: 12px
-        margin-top: 16px
-
-    .note-card
-        border: 1px solid var(--gray)
-        padding: 20px
-        min-height: 0
-        display: grid
-        grid-template-columns: minmax(0, 1fr)
-        align-items: start
-
-        &__meta
-            color: var(--gray)
-            font-size: 14px
-            margin-bottom: 12px
-
-        &__title
-            font-size: 24px
-            font-weight: 600
-            line-height: 1.3
-
-            a
-                color: var(--white)
-
-                &:hover
-                    color: var(--primary)
-
-        &__excerpt
-            color: var(--gray)
-            margin-top: 16px
-            display: -webkit-box
-            -webkit-box-orient: vertical
-            -webkit-line-clamp: 2
-            overflow: hidden
-
-    .note-link-card
-        display: block
-        border: 1px solid var(--gray)
-        padding: 18px 20px
-        color: var(--white)
-
-        &:hover
-            border-color: var(--primary)
-
-        &__title
-            font-size: 20px
-            font-weight: 600
-            line-height: 1.3
-
-        &__description
-            color: var(--gray)
-            margin-top: 10px
-
-        &__cta
-            color: var(--primary)
-            margin-top: 14px
 
     .project-list
         @media (max-width: $desktopScreen)
