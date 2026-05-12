@@ -472,6 +472,46 @@
         @media (max-width: $desktopScreen)
             grid-template-columns: repeat(3, 1fr)
 
+    .gen-ai
+        .notes__header
+            margin-bottom: 24px
+
+        .notes__external-list
+            gap: 8px
+            margin-top: 8px
+
+        .note-link-card
+            padding: 18px 20px
+
+            &__title
+                font-size: 24px
+
+            &__description
+                font-size: 16px
+                line-height: inherit
+                margin-top: 10px
+
+            &__cta
+                font-size: 16px
+                margin-top: 14px
+
+        .gen-ai-card
+            &__eyebrow, &__techs
+                font-size: 14px
+                line-height: inherit
+
+            &__metrics
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+                gap: 8px
+                margin-top: 16px
+
+            &__metric
+                padding: 8px
+                font-size: 12px
+
+                strong
+                    font-size: 18px
+
     .skills__list
         @media (max-width: $tabletScreen)
             columns: 3
