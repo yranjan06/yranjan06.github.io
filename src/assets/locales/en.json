@@ -55,6 +55,18 @@
         "adf-cicd-deployment": {
             "name": "ADF Pipeline CI/CD Deployment using Azure DevOps",
             "description": "Established a complete CI/CD process using Azure DevOps. Automated the build and release pipelines for deploying Azure Data Factory artifacts and ARM templates from a development environment to a production environment."
+        },
+        "rag-assistant": {
+            "name": "RAG Assistant: Document Intelligence System",
+            "description": "Production-style RAG system that ingests PDFs, stores embeddings in ChromaDB, retrieves context with Vector + BM25 search, and answers through Groq Llama 3.3."
+        },
+        "ai-voice-assistant": {
+            "name": "Voice AI Agent with Tool Execution",
+            "description": "Voice-controlled local AI agent that transcribes speech, classifies intent, executes sandboxed tools, and keeps short session memory."
+        },
+        "webghosting-mcp": {
+            "name": "WEBGhosting MCP Browser Agent",
+            "description": "Go-based MCP server that wraps Playwright for live web browsing, DOM perception, tab control, and structured extraction."
         }
     },
     "pages": {

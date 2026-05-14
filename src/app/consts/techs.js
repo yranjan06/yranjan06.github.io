@@ -31,6 +31,9 @@ export default {
   express: "Express",
   flask: "Flask",
   quart: "Quart",
+  fastapi: "FastAPI",
+  streamlit: "Streamlit",
+  gradio: "Gradio",
   deno: "Deno",
   discordJs: "Discord.js",
   pixijs: "PixiJS",
@@ -64,6 +67,13 @@ export default {
   streamAnalytics: "Azure Stream Analytics",
   googleStorage: "Google Storage",
   liveTable: "Delta Live Table",
+  chromadb: "ChromaDB",
+  bm25: "BM25",
+  groq: "Groq",
+  ragas: "RAGAS",
+  playwright: "Playwright",
+  mcp: "MCP",
+  go: "Go",
 
   // ──────────────── Cloud Platforms ────────────────
   aws: "AWS",

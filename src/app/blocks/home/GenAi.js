@@ -3,7 +3,7 @@ const genAiProjects = [
         title: "Document Intelligence",
         eyebrow: "RAG assistant | Hybrid retrieval | RAGAS evaluated",
         description: "Production-style RAG system that ingests PDFs, stores embeddings in ChromaDB, retrieves context with Vector + BM25 search, and answers through Groq Llama 3.3.",
-        href: "https://github.com/yranjan06/rag-assistant",
+        href: "/projects#rag-assistant",
         metrics: [
             { label: "Faithfulness", value: "0.89" },
             { label: "Answer Relevancy", value: "0.85" },
@@ -15,7 +15,7 @@ const genAiProjects = [
         title: "Voice AI Agent",
         eyebrow: "Voice assistant | Tool execution | Human-in-the-loop",
         description: "Voice controlled local AI agent that accepts mic or uploaded audio, transcribes with Groq Whisper, classifies intent in 3 tiers, executes sandboxed tools, and displays results in Gradio.",
-        href: "https://github.com/yranjan06/ai-voice-assistant",
+        href: "/projects#ai-voice-assistant",
         metrics: [
             { label: "STT latency", value: "Sub-2s" },
             { label: "Intent classifier", value: "3-tier" },
@@ -27,7 +27,7 @@ const genAiProjects = [
         title: "WEBGhosting MCP",
         eyebrow: "Browser MCP | Stealth Playwright | Voice-controlled web agent",
         description: "Go-based MCP server that wraps Playwright so AI agents can browse the live web, perceive DOM context, run extraction tasks, manage tabs, and operate through a Sarvam voice wrapper.",
-        href: "https://github.com/yranjan06/WEBGhosting-MCP",
+        href: "/projects#webghosting-mcp",
         metrics: [
             { label: "MCP tools", value: "34" },
             { label: "Stealth scripts", value: "22" },
@@ -47,7 +47,7 @@ export default () => /*html*/ `
             ${genAiProjects
                 .map(
                     (project) => /*html*/ `
-                        <a class="note-link-card gen-ai-card" href="${project.href}" target="_blank" rel="noopener noreferrer">
+                        <a class="note-link-card gen-ai-card" href="${project.href}">
                             <div class="gen-ai-card__eyebrow">${project.eyebrow}</div>
                             <div class="note-link-card__title">${project.title}</div>
                             <div class="note-link-card__description">${project.description}</div>

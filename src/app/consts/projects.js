@@ -82,6 +82,30 @@ const projects = [
         },
         isSmall: true,
     },
+    {
+        id: "rag-assistant",
+        techs: ["python", "fastapi", "streamlit", "chromadb", "bm25", "groq", "ragas"],
+        links: {
+            github: "yranjan06/rag-assistant"
+        },
+        isSmall: true,
+    },
+    {
+        id: "ai-voice-assistant",
+        techs: ["python", "gradio", "groq"],
+        links: {
+            github: "yranjan06/ai-voice-assistant"
+        },
+        isSmall: true,
+    },
+    {
+        id: "webghosting-mcp",
+        techs: ["go", "playwright", "mcp"],
+        links: {
+            github: "yranjan06/WEBGhosting-MCP"
+        },
+        isSmall: true,
+    },
 ];
 
 export default projects;
